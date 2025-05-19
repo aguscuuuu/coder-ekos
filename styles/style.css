@@ -6,7 +6,156 @@
     font-size: 16px;
 }
 @media (max-width: 425px){ /*| mobile view | ... - 425px |*/ 
-    
+    /*general config-----------------------------------------------------------------------------------------------------------------------------------*/
+    body {
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        margin-top: 6.5em;
+        font-optical-sizing: auto;
+        color: #362029;
+        background-color: #f6f2ed;
+        font-size: 0.875rem;
+    }
+    .page-container ::selection {
+        background-color: #93556c; 
+        color: white;            
+    }
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .content {
+        flex: 1; 
+    }
+    h2, h3, h4 {
+        text-align: center;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 1.25rem;
+        padding: 0.75em 0;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    /*general config - top bar-------------------------------------------------------------------------------------------------------------------------*/
+    .top-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background-color: #93556c;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        z-index: 1100;
+        border-bottom: 2px solid #e8d0c4;
+        transition: transform 0.1s ease;
+    }
+    .top-bar p {
+        font-size: 2.4rem;
+        transition: text-shadow 0.3s ease;
+    }  
+    .top-bar.hidden {
+        transform: translateY(-100%);
+    }
+    .top-bar p:hover {
+        text-shadow: 0 0 20px white, 0 0 30px white;
+    }
+    /*general config - whatsapp float------------------------------------------------------------------------------------------------------------------*/
+    .whatsapp-float {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1rem;
+        border-radius: 8.75rem;
+        z-index: 100;
+        box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+    .whatsapp-float img {
+        width: 10rem;
+        height: 10rem;
+    }
+    .whatsapp-float:hover {
+        transform: scale(1.04);
+    }
+    /*general config - header--------------------------------------------------------------------------------------------------------------------------*/
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5em 1em;
+        font-weight: 600;
+        background-color: #f3e3db;
+        color: white;
+        border-bottom: 0.1875rem solid #e8d0c4;
+        transition: top 0.1s ease;
+        box-shadow: 0 0.3125rem 0.5rem rgba(0,0,0,0.1);
+    }
+    header section {
+        flex-grow: 1;
+        text-align: center;
+    }
+    header .menu-toggle {
+        display: block;
+
+    }
+    header .hamburger-menu {
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        color: #362029;
+        cursor: pointer;
+    }
+    header.shifted-up {
+        top: 0;
+    }
+    header section img {
+        max-width: 30em;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+    header nav {
+        position: absolute;
+        top: 4.7em;
+        left: 0;
+        width: 100%;
+        background-color: #f3e3db;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+        transition: transform 0.3s ease;
+    }
+    header nav.show-menu {
+        display: flex;
+    }
+    header h1 a {
+        text-decoration: none;
+        color: white;
+    }
+    header li a {
+        display: inline-block;
+        padding: 0.5em 0.8em;
+        font-size: 2em;
+        text-decoration: none;
+        color: #362029;
+        border-radius: 0.3125rem;
+        transition: background-color 0.3s;
+    }
+    header li a:hover {
+        background-color: #e8d0c4;
+    }
+    header li a.active {
+        background-color: #e8d0c4;
+    }
 }
 @media (min-width: 426px) and (max-width: 1023px){ /*| tablet view | 426px - 1023px |*/
 
@@ -110,6 +259,9 @@
         border-bottom: 0.1875rem solid #e8d0c4;
         transition: top 0.1s ease;
         box-shadow: 0 0.3125rem 0.5rem rgba(0,0,0,0.1);
+    }
+    header .menu-toggle {
+        display: none;
     }
     header.shifted-up {
         top: 0;

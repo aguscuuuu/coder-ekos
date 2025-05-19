@@ -29,4 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
             link.classList.add('active');
         }
     });
+
+    // menu hamburguesa
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('nav');
+
+        if (hamburgerMenu) {
+            hamburgerMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('show-menu');
+            });
+        }
+
 });
