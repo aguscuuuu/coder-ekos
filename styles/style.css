@@ -5,7 +5,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
 }
-@media (max-width: 425px){ /*| mobile view | ... - 425px |*/ 
+@media (max-width: 425px){ /*| mobile view | ... < 425px |*/ 
     /*general config-----------------------------------------------------------------------------------------------------------------------------------*/
     body {
         padding: 0px;
@@ -60,6 +60,8 @@
         text-align: center;
         top: 0;
         width: 100%;
+        height: auto;
+        padding: 3px;
         background-color: #93556c;
         color: white;
         font-weight: 500;
@@ -67,7 +69,7 @@
         border-bottom: 2px solid #e8d0c4;
     }
     .top-bar p {
-        font-size: 0.5rem;
+        font-size: 0.65rem;
         margin: 0;
     }
     header section {
@@ -75,7 +77,7 @@
         justify-content: center;
         align-items: center;
     }
-    header section img {
+    .logo img {
         width: 7rem;
         height: auto;
         margin: 10px;
@@ -113,8 +115,8 @@
     /*general config - whatsapp float------------------------------------------------------------------------------------------------------------------*/
     .whatsapp-float {
         position: fixed;
-        bottom: 0.5rem;
-        right: 0.5rem;
+        bottom: 1rem;
+        right: 1rem;
         border-radius: 8.75rem;
         z-index: 100;
         box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.3);
@@ -133,12 +135,12 @@
         display: flex;
         margin: 0 auto;
         overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     .carousel {
         max-width: 100%;
         width: 100%;
         overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         position: relative;
     }
     .carousel-images {
@@ -162,21 +164,22 @@
         position: absolute; 
         top: 50%; 
         transform: translateY(-50%); 
-        font-size: 1rem;
-        color: white;
+        font-size: 1.5rem;
         background-color: #f3e3db;
         border: none;
-        padding: 0.6rem;
+        padding: 0.3rem;
         color: #362029;
-        border-radius: 15px;
+        border-radius: 5px;
         cursor: pointer;
         z-index: 2; 
     }
     .prev {
         left: 0; 
+        border-radius: 0 7px 7px 0;
     }
     .next {
-        right: 0; 
+        right: 0;
+        border-radius: 7px 0px 0px 7px; 
     }
     /*index.html > carrousel > bottom buttons----------------------------------------------------------------------------------------------------------*/
     .botones-de-fotos {
@@ -210,7 +213,6 @@
         width: 3rem;
         padding: 0.3rem;
         filter: brightness(0) saturate(100%) invert(14%) sepia(28%) saturate(798%) hue-rotate(311deg) brightness(92%) contrast(88%);
-        transition: filter 0.3s ease;
     }
     .beneficios section h3 {
         font-size: 0.9rem;
@@ -225,15 +227,14 @@
     .presentaciones-tipo-de-producto {
         display: grid;
         grid-template-columns: 1fr; 
-        gap: 15px;
-        padding: 10px 1em; 
-        margin-bottom: 4em; 
+        gap: 1rem;
+        padding: 0; 
+        margin-bottom: 1em; 
     }
     .tipo-de-producto {
         position: relative;
         overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .producto-contenedor {
         position: relative;
@@ -244,7 +245,6 @@
         width: 100%;
         height: 200px; 
         object-fit: cover;
-        border-radius: 15px;
         display: block;
     }
     .producto-contenedor p {
@@ -260,7 +260,89 @@
         z-index: 2;
         text-align: center; 
     }
-    /* general config - shallow-footer ------------------------------------------------------------------------------------------------------------------ */
+    /*index.html > instagram---------------------------------------------------------------------------------------------------------------------------*/
+    .instagram-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0;
+        max-width: 100%;
+        padding: 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .instagram-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        flex-direction: column;
+    }
+    .instagram-icon {
+        width: auto;
+        height: 3rem;
+        filter: brightness(0) saturate(100%) invert(37%) sepia(11%) saturate(1942%) hue-rotate(286deg) brightness(97%) contrast(81%);
+        margin: 0 0 0.5rem 0;
+    }
+    .instagram-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        text-decoration: none;
+        color: #362029;
+        align-items: center;
+    }
+    .follow-us {
+        font-size: 0.8rem;
+        pointer-events: none;
+    }
+    .account-name {
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    /*index.html > newsletter--------------------------------------------------------------------------------------------------------------------------*/
+    .newsletter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        margin: 2rem 0;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .newsletter label {
+        color: #362029;
+        font-size: 0.8rem;
+    }
+    .newsletter input[type="email"] {
+        padding: 0.8rem; 
+        border: 1px solid #ddd; 
+        border-radius: 10px; 
+        font-size: 0.8rem; 
+        width: 100%; 
+        transition: border-color 0.3s ease; 
+    }
+    .newsletter button {
+        font-size: 0.8rem; 
+        background-color: #93556c; 
+        color: white; 
+        font-weight: bold;
+        padding: 0.3rem 0.3rem; 
+        border: none; 
+        border-radius: 6px; 
+        cursor: pointer;
+        transition: background-color 0.3s ease; 
+        width: 100%;
+        max-width: 200px;
+    }
+    .newsletter input[type="email"]:focus {
+        border-color: #93556c;
+        outline: none;
+    }
+    .newsletter button:active {
+        background-color: #80475b; 
+    }
+    /* general config - shallow-footer ----------------------------------------------------------------------------------------------------------------*/
     .shallow-footer {
         font-optical-sizing: auto;
         text-align: left;
@@ -295,8 +377,9 @@
         display: inline-block;
         text-decoration: none;
         color: #ffffff;
-        transition: color 0.2s ease;
         font-size: 0.7rem;
+        align-items: center;
+        justify-content: center;
     }
     .shallow-footer img {
         max-width: 1.5rem;
@@ -310,35 +393,35 @@
     .deep-footer {
         padding: 4px;
         font-optical-sizing: auto;
-        text-align: right;
+        text-align: center;
         color: white;
         background-color: #753e52;
         border-top: 5px solid #80455a;
     }
     .deep-footer p {
-        font-size: 0.1rem;
         margin-bottom: 0;
+        font-size: 0.5rem;
     }
     .deep-footer p b {
-        font-size: 0.1rem;
+        font-size: 0.5rem;
     }
     .deep-footer p a {
         text-decoration: none;
         color: white;
-        font-size: 0.1rem;
+        font-size: 0.5rem;
     }    
     .deep-footer ::selection { 
         background-color: white; 
         color: #93556c;   
     }
 }
-@media (min-width: 426px) and (max-width: 1023px){ /*| tablet view | 426px - 1023px |*/
+@media (min-width: 426px) and (max-width: 1023px){ /*| tablet view | 426px < 1023px |*/
 
 }
-@media (min-width: 1024px){ /*| desktop view | 1024px - ... |*/
+@media (min-width: 1024px){ /*| desktop view | 1024px < ... |*/
     /*general config-----------------------------------------------------------------------------------------------------------------------------------*/
     body {
-        padding: 0px;
+        padding: 0;
         height: 100%;
         margin-top: 6.5em;
         font-optical-sizing: auto;
@@ -372,6 +455,7 @@
     }
     /*general config - top bar-------------------------------------------------------------------------------------------------------------------------*/
     .top-bar {
+        left: 0;
         position: fixed;
         top: 0;
         width: 100%;
@@ -379,17 +463,20 @@
         background-color: #93556c;
         color: white;
         justify-content: center;
-        align-items: start;
+        align-items: center;
         font-weight: 500;
         padding: 0;
         z-index: 1100; 
         border-bottom: 2px solid #e8d0c4;
         display: flex;
         transition: transform 0.1s ease;
+        overflow: hidden;
     }
     .top-bar p {
         transition: text-shadow 0.3s ease;
         font-size: 0.8rem;
+        line-height: 1.5rem;
+        margin: 0;
     }    
     .top-bar.hidden {
         transform: translateY(-100%);
@@ -421,12 +508,20 @@
     header.shifted-up {
         top: 0;
     }
-    header section img {
+    .logo a {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+    }
+    .logo {
+        margin-left: 5em;
+        }
+    .logo img {
+        display: block;
         max-width: 8em;
         height: auto;
         transition: transform 0.3s ease;
-        padding: 0.2em;
-        margin-left: 5em;
+        margin: 0.3rem 0;
     }
     header h1 a {
         text-decoration: none;
@@ -460,8 +555,8 @@
     /*general config - whatsapp float------------------------------------------------------------------------------------------------------------------*/
     .whatsapp-float {
         position: fixed;
-        bottom: 3.75rem;
-        right: 0.5rem;
+        bottom: 5rem;
+        right: 0.3rem;
         border-radius: 8.75rem;
         z-index: 100;
         box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.3);
@@ -507,7 +602,7 @@
     .footer-column ul li a {
         text-decoration: none;
         color: white;
-        transition: font-weight 0.3s ease;
+        transition: text-shadow 0.3s ease;
         font-size: 0.75rem;
     }
     .shallow-footer img {
@@ -516,7 +611,7 @@
         padding: 0.1rem;
     }
     .footer-column ul li a:hover{
-        font-weight: 600;
+        text-shadow: 0 0 4px white;
     }
     .shallow-footer ::selection { 
         background-color: white; 
@@ -544,7 +639,7 @@
     .deep-footer p a {
         text-decoration: none;
         color: white;
-        transition: font-weight 0.3s ease;
+        transition: text-shadow 0.3s ease;
         font-size: 0.75rem;
     }    
     .deep-footer ::selection { 
@@ -552,7 +647,7 @@
         color: #93556c;   
     }
     .deep-footer p a:hover {
-        font-weight: 600;
+        text-shadow: 0 0 4px white;
     }
     /*index.html > carrousel---------------------------------------------------------------------------------------------------------------------------*/
     .carousel-wrapper {
@@ -633,6 +728,7 @@
         padding: 30px 10px;
         color: #362029;
         text-align: center;
+        margin: 2rem;
     }
     .beneficios section {
         display: flex;
@@ -654,12 +750,13 @@
         transition: filter 0.3s ease;
     }
     .beneficios section h3 {
-        font-size: 16px;
+        font-size: 1rem;
         margin-bottom: 5px;
         transition: transform 0.3s ease;
+        align-items: center;
     }
     .beneficios section p {
-        font-size: 14px;
+        font-size: 0.8rem;
         transition: transform 0.3s ease;
     }
     .beneficio-1, .beneficio-2, .beneficio-3 {
@@ -673,7 +770,7 @@
         filter: brightness(0) invert(1);
     }
     .beneficios section:hover h3, .beneficios section:hover p {
-    transform: translateY(-5px);
+        transform: translateY(-5px);
     }
     /*index.html > presentaciones----------------------------------------------------------------------------------------------------------------------*/
     .presentaciones-tipo-de-producto {
@@ -681,7 +778,7 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
         padding: 10px 8em;
-        margin-bottom: 7em;
+        margin-bottom: 2em;
     }
     .tipo-de-producto {
         position: relative;
@@ -715,7 +812,7 @@
         font-size: 2rem;
         font-weight: bold;
         text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
-        z-index: 2; /* Por encima del overlay */
+        z-index: 2; 
     }
     .producto-contenedor::before {
         content: "";
@@ -724,7 +821,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0); /* Transparente al inicio */
+        background-color: rgba(0, 0, 0, 0);
         transition: background-color 0.3s ease;
         border-radius: 15px;
         z-index: 1;
@@ -732,6 +829,92 @@
     }
     .tipo-de-producto:hover .producto-contenedor::before {
         background-color: rgba(0, 0, 0, 0.2);
+    }
+    /* index.html > instagram--------------------------------------------------------------------------------------------------------------------------*/
+    .instagram-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem auto;
+        max-width: 500px;
+        padding: 1rem 1rem;
+    }
+    .instagram-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: filter 0.3s ease;
+    }
+    .instagram-icon {
+        width: 4rem;
+        height: auto;
+        filter: brightness(0) saturate(100%) invert(37%) sepia(11%) saturate(1942%) hue-rotate(286deg) brightness(97%) contrast(81%);
+        margin-right: 0.75rem;
+        transition: transform 0.3s ease, filter 0.3s ease; 
+    }
+    .instagram-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+        text-decoration: none;
+        color: #362029;
+        transition: transform 0.3s ease;
+    }
+    .follow-us {
+        font-size: 1rem;
+        pointer-events: none;
+    }
+    .account-name {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    .instagram-link:hover .instagram-icon {
+        transform: scale(1.05);
+        filter: brightness(0) saturate(100%) invert(28%) sepia(13%) saturate(1589%) hue-rotate(287deg) brightness(97%) contrast(95%);
+        cursor: pointer;
+    }
+    .instagram-link:hover .instagram-text {
+        cursor: pointer;
+        transform: rotate(2deg);
+    }
+    /*index.html > newsletter--------------------------------------------------------------------------------------------------------------------------*/
+    .newsletter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+        margin: 4rem 0;
+    }
+    .newsletter label {
+        color: #362029;
+        margin-right: 1rem;
+    }
+    .newsletter input[type="email"] {
+        padding: 0.8rem; 
+        border: 1px solid #ddd; 
+        border-radius: 10px 0 0 10px; 
+        font-size: 1rem; 
+        width: 400px; 
+        transition: border-color 0.3s ease; 
+    }
+    .newsletter button {
+        font-size: 1rem; 
+        background-color: #93556c; 
+        color: white; 
+        font-weight: bold;
+        padding: 0.8rem 1.2rem; 
+        border: none; 
+        border: 1px solid #93556c;
+        border-radius: 0 10px 10px 0; 
+        cursor: pointer;
+        transition: background-color 0.3s ease; 
+    }
+    .newsletter input[type="email"]:focus {
+        border-color: #93556c;
+        outline: none;
+    }
+    .newsletter button:hover {
+        background-color: #80475b; 
     }
     /*productos.html ----------------------------------------------------------------------------------------------------------------------------------*/
     .categoria {
