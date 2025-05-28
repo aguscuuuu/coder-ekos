@@ -34,8 +34,9 @@
         font-weight: bold;
     }
     h2 {
-        font-size: 1.25rem;
-        padding: 0.75em 0;
+        font-size: 1rem;
+        margin: 0.7rem auto;
+        padding: 0;
     }
     h3 {
         font-size: 1rem;
@@ -342,6 +343,50 @@
     .newsletter button:active {
         background-color: #80475b; 
     }
+    /* productos.html ----------------------------------------------------------------------------------------------------------------------------------*/ 
+    .categoria {
+        margin: 0 auto;
+        padding: 0 1rem;
+        margin-bottom: 2rem;
+    }
+    .categoria h3 {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+    .galeria-productos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    .producto {
+        text-align: center;
+        padding: 5px;
+        background-color: #fff9f4;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+        border-radius: 10px;
+    }
+    .producto:hover {
+        transform: scale(1.03);
+    }
+    .producto img {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .nombre-producto {
+        font-weight: 600;
+        margin: 0.3rem;
+        font-size: 0.8rem;
+    } 
+    .precio-producto {
+        font-size: 0.8rem;
+        color: #444;
+        margin: 0.3rem;
+    }
+
     /* general config - shallow-footer ----------------------------------------------------------------------------------------------------------------*/
     .shallow-footer {
         font-optical-sizing: auto;
@@ -414,6 +459,7 @@
         background-color: white; 
         color: #93556c;   
     }
+
 }
 @media (min-width: 426px) and (max-width: 1023px){ /*| tablet view | 426px < 1023px |*/
 
@@ -918,9 +964,10 @@
     }
     /*productos.html ----------------------------------------------------------------------------------------------------------------------------------*/
     .categoria {
-        margin: 2em auto;
+        margin: 0 auto;
         padding: 1em;
         max-width: 1000px;
+        margin-bottom: 4rem;
     }
     .categoria h3 {
         font-size: 25px;
@@ -929,7 +976,6 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 30px;
-        margin-top: 20px;
     }
     .producto {
         text-align: center;
