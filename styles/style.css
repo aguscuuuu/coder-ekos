@@ -34,12 +34,13 @@
         font-weight: bold;
     }
     h2 {
-        font-size: 1rem;
-        margin: 0.7rem auto;
-        padding: 0;
+        display: none;
     }
     h3 {
         font-size: 1rem;
+    }
+    .page-container {
+        top: 1rem;
     }
     /*general config - header--------------------------------------------------------------------------------------------------------------------------*/
     header {
@@ -104,14 +105,18 @@
         justify-content: center; 
         align-items: center;
     }
-    header nav li a {
+    header li a {
         font-weight: 600;
         font-size: 0.7rem;
         margin: 0.2rem;       
         text-decoration: none;
         color: #362029;   
-        padding: 0;  
+        padding: 0.2em 0.7em;
+        border-radius: 5px;  
         display: inline-block;
+    }
+    header li a.active {
+        background-color: #e8d0c4;
     }
     /*general config - whatsapp float------------------------------------------------------------------------------------------------------------------*/
     .whatsapp-float {
@@ -345,7 +350,7 @@
     }
     /* productos.html ----------------------------------------------------------------------------------------------------------------------------------*/ 
     .categoria {
-        margin: 0 auto;
+        margin: 2rem auto;
         padding: 0 1rem;
         margin-bottom: 2rem;
     }
@@ -382,11 +387,188 @@
         font-size: 0.8rem;
     } 
     .precio-producto {
+        display: flex;
+        justify-content: start;
         font-size: 0.8rem;
         color: #444;
-        margin: 0.3rem;
+        margin: 0;
+        padding: 0.2rem;
+        border-top: 1px solid #362029;
     }
-
+    /*contacto.html------------------------------------------------------------------------------------------------------------------------------------*/
+    .contacto-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin: 3rem 1rem 3rem 1rem ;
+    }
+    .contacto-info, .contacto-formulario {
+        flex: 1;
+        min-width: 250px;
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 15px;
+        background-color: #fff9f4;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        min-height: 30em;
+    }
+    /*contacto.html > info-----------------------------------------------------------------------------------------------------------------------------*/
+    .contacto-info h4, .contacto-formulario h4 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #362029;
+    }
+    .contacto-info p {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .info-item {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-top: 1.5em;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0.5rem;
+    }
+    .info-item a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    .contacto-info .info-item a p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    .info-item img {
+        width: 35px;
+        height: auto;
+        margin-right: 0.8rem;
+        filter: invert(40%) sepia(15%) saturate(1342%) hue-rotate(286deg) brightness(90%) contrast(86%);
+        transition: filter 0.3s ease;
+    }
+    .info-item img:hover {
+        filter: invert(30%) sepia(22%) saturate(1080%) hue-rotate(288deg) brightness(95%) contrast(82%);
+        cursor: pointer;
+    }
+    .info-item p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #362029;
+        transition: color 0.3s ease;
+    }
+    .info-item p:hover {
+        color: #93556c;
+        cursor: pointer;
+    }
+    /*contacto.html > formulario-----------------------------------------------------------------------------------------------------------------------*/
+    .contacto-formulario label {
+        display: block;
+        margin: 1rem 0 0.3rem;
+        font-weight: 600;
+        color: #362029;
+        font-size: 0.8rem;
+    }
+    .contacto-formulario input[type="text"], .contacto-formulario input[type="email"], .contacto-formulario textarea {
+        width: 100%;
+        padding: 0.3rem;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 0.8rem;
+        transition: border-color 0.3s ease;
+        resize: none;
+    }
+    .contacto-formulario textarea {
+        height: 150px;
+    }
+    .contacto-formulario input:focus, .contacto-formulario textarea:focus {
+        border-color: #93556c;
+        outline: none;
+    }
+    .contacto-formulario input[type="submit"] {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+        background-color: #93556c;
+        color: white;
+        font-weight: bold;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+    .contacto-formulario input[type="submit"]:hover {
+        background-color: #80475b;
+    }
+    /*ubicacion.html-----------------------------------------------------------------------------------------------------------------------------------*/
+    .local {
+        max-width: 100%;
+        margin: 2rem 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+        background-color: #fff9f4;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        font-size: 0.8rem;
+        box-sizing: border-box;
+    }
+    .local h4 {
+        margin-top: 0.5em;
+        font-size: 1.2em;
+        margin-bottom: 1.5rem;
+    }
+    .local p {
+        margin-bottom: 1rem;
+        font-size: 1em;
+    }
+    .content h3 {
+        text-align: center;
+        margin-bottom: 1em;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+    }
+    .mapa-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-top: 1.5rem;
+    }
+    .mapa-container iframe {
+        width: 100%;
+        height: 150px;
+        border: none;
+        border-radius: 10px;
+    }
+    /*cambio-dev.html----------------------------------------------------------------------------------------------------------------------------------*/
+    .politica {
+        max-width: 100%;
+        margin: 2rem 1rem 0 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+        background-color: #fff9f4;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        text-align: justify;
+        box-sizing: border-box;
+    }
+    .politica p {
+        font-size: 0.8rem;
+    }
+    .politica li{
+        font-size: 0.8rem;
+    }
+    .politica h4 {
+        font-size: 0.9rem;
+    }
     /* general config - shallow-footer ----------------------------------------------------------------------------------------------------------------*/
     .shallow-footer {
         font-optical-sizing: auto;
@@ -459,7 +641,32 @@
         background-color: white; 
         color: #93556c;   
     }
-
+    /* general config - footer > creator ---------------------------------------------------------------------------------------------------------------- */
+    .creator {
+        display: flex;
+        justify-content: center;
+        background-color: #5c3040;
+        padding: 0.25rem 0rem 2rem 0rem;
+        text-align: center;
+        color: white;
+    }
+    .creator p {
+        display: flex;
+        justify-content: center;
+        background-color: #753e52;
+        font-size: 0.5rem;
+        border-radius: 20px;
+        margin: 0.3rem;
+        padding: 0.5rem 2rem;
+        transition: box-shadow 0.3s ease;
+    }
+    .creator p:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    .creator ::selection {
+        background-color: white;
+        color: #362029;
+    }
 }
 @media (min-width: 426px) and (max-width: 1023px){ /*| tablet view | 426px < 1023px |*/
 
@@ -488,7 +695,8 @@
     }
     h2 {
         text-align: center;
-        padding: 1em;
+        padding: 1rem;
+        margin: 0;
         font-size: 1.5rem;
         font-weight: bold;
     }
@@ -561,7 +769,8 @@
     }
     .logo {
         margin-left: 5em;
-        }
+        margin-top: 0.5rem;
+    }
     .logo img {
         display: block;
         max-width: 8em;
@@ -593,7 +802,7 @@
         background-color: #e8d0c4;
     }
     header li a.active {
-    background-color: #e8d0c4;
+        background-color: #e8d0c4;
     }
     header section img:hover {
         transform: scale(0.98); 
@@ -668,9 +877,9 @@
     }
     /*general config - deep-footer---------------------------------------------------------------------------------------------------------------------*/
     .deep-footer {
-        padding: 4px;
+        padding: 0.25rem 20rem;
         font-optical-sizing: auto;
-        text-align: right;
+        text-align: center;
         color: white;
         background-color: #753e52;
         border-top: 5px solid #80455a;
@@ -694,6 +903,32 @@
     }
     .deep-footer p a:hover {
         text-shadow: 0 0 4px white;
+    }
+    /* general config - footer > creator ---------------------------------------------------------------------------------------------------------------- */
+    .creator {
+        display: flex;
+        justify-content: center;
+        background-color: #5c3040;
+        padding: 0.25rem 0rem 1rem 0rem;
+        text-align: center;
+        color: white;
+    }
+    .creator p {
+        display: flex;
+        justify-content: center;
+        background-color: #753e52;
+        font-size: 0.75rem;
+        border-radius: 20px;
+        margin: 0.5rem;
+        padding: 0.5rem 5rem;
+        transition: box-shadow 0.3s ease;
+    }
+    .creator p:hover {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    .creator ::selection {
+        background-color: white;
+        color: #362029;
     }
     /*index.html > carrousel---------------------------------------------------------------------------------------------------------------------------*/
     .carousel-wrapper {
@@ -834,7 +1069,7 @@
         transition: transform 0.3s ease;
     }
     .tipo-de-producto:hover {
-        transform: scale(1.03);
+        transform: scale(1.02);
     }
     .producto-contenedor {
         position: relative;
@@ -964,10 +1199,13 @@
     }
     /*productos.html ----------------------------------------------------------------------------------------------------------------------------------*/
     .categoria {
-        margin: 0 auto;
-        padding: 1em;
-        max-width: 1000px;
+        margin: 1rem auto;
+        padding: 0.5rem 4rem 4rem 4rem;
+        max-width: 60rem;
         margin-bottom: 4rem;
+        background-color: #f3e3db;
+        border-radius: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .categoria h3 {
         font-size: 25px;
@@ -982,7 +1220,7 @@
         border-radius: 10px;
         padding: 10px;
         background-color: #fff9f4;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         transition: transform 0.2s ease;
     }
     .producto:hover {
@@ -1001,9 +1239,13 @@
         font-size: 1.2rem;
     } 
     .precio-producto {
+        display: flex;
+        justify-content: start;
+        border-top: 1px solid #362029;
         font-size: 1rem;
         color: #444;
-        margin-bottom: 5px;
+        padding: 0.2rem;
+        margin: 0;
     }
     /*contacto.html------------------------------------------------------------------------------------------------------------------------------------*/
     .contacto-container {
@@ -1053,7 +1295,10 @@
         text-decoration: none;
     }
     .contacto-info .info-item a p {
+        margin: 0;
+        display: flex;
         align-items: center;
+        height: 100%;
     }
     .info-item img {
         width: 50px;
