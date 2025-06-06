@@ -1,0 +1,114 @@
+// variables & mixins ___________________________________________________________________________________________________________________________________________________
+@import 'variables';
+@import 'breakpoints';
+// components & pages ___________________________________________________________________________________________________________________________________________________
+@import 'header';
+@import 'footer';
+@import 'index';
+@import 'productos';
+@import 'contacto';
+@import 'ubicacion';
+@import 'cambio-dev';
+// reset ________________________________________________________________________________________________________________________________________________________________
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-main;
+    font-size: $font-size-base;
+}
+// general config _______________________________________________________________________________________________________________________________________________________
+body {
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    font-optical-sizing: auto;
+    color: #362029;
+    background-color: #f6f2ed;
+    font-size: 0.875rem;
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        top: 1rem;
+
+        &::selection {
+            background-color: #93556c;
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            margin-top: 9rem;
+        }
+    }
+
+    h2, h3, h4 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    @include desktop {
+        padding: 0;
+        margin-top: 6.5em;
+        font-size: 1rem;
+
+        .page-container {
+            top: 0;
+
+            .content {
+                margin-top: 0;
+            }
+        }
+
+        h2 {
+            display: block;
+            padding: 1rem;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+// whatsapp float _______________________________________________________________________________________________________________________________________________________
+.whatsapp-float {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 8.75rem;
+    z-index: 100;
+    box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.3);
+    display: flex;
+
+    img {
+        width: 3rem;
+        height: auto;
+    }
+
+    @include desktop {
+        bottom: 5rem;
+        right: 0.3rem;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+
+        img {
+            width: 3.75rem;
+            height: 3.75rem;
+        }
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+}
+/*_______________________________________________________________________________________________________________________________________________________________________*/

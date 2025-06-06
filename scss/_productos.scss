@@ -1,0 +1,90 @@
+.categoria {
+
+    margin: 2rem auto;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+
+    h3 {
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .galeria-productos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+
+        .producto {
+            text-align: center;
+            padding: 5px;
+            background-color: #fff9f4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            border-radius: 10px;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            img {
+                width: 100%;
+                max-width: 320px;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .nombre-producto {
+                font-weight: 600;
+                margin: 0.3rem;
+                font-size: 0.8rem;
+            }
+
+            .precio-producto {
+                display: flex;
+                justify-content: start;
+                font-size: 0.8rem;
+                color: #444;
+                margin: 0;
+                padding: 0.2rem;
+                border-top: 1px solid #362029;
+            }
+        }
+    }
+
+    @include desktop {
+        margin: 1rem auto;
+        padding: 0.5rem 4rem 4rem 4rem;
+        max-width: 60rem;
+        margin-bottom: 4rem;
+        background-color: #f3e3db;
+        border-radius: 15px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+        h3 {
+            font-size: 25px;
+        }
+
+        .galeria-productos {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+
+            .producto {
+                padding: 10px;
+
+                img {
+                    max-width: 300px;
+                }
+
+                .nombre-producto {
+                    margin: 10px 0 5px;
+                    font-size: 1.2rem;
+                }
+
+                .precio-producto {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
