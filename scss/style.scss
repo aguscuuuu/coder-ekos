@@ -2,13 +2,13 @@
 @import 'variables';
 @import 'breakpoints';
 // components & pages ___________________________________________________________________________________________________________________________________________________
-@import 'header';
-@import 'footer';
 @import 'index';
 @import 'productos';
 @import 'contacto';
 @import 'ubicacion';
 @import 'cambio-dev';
+@import 'header';
+@import 'footer';
 // reset ________________________________________________________________________________________________________________________________________________________________
 * {
     margin: 0;
@@ -25,7 +25,6 @@ body {
     font-optical-sizing: auto;
     color: #362029;
     background-color: #f6f2ed;
-    font-size: 0.875rem;
 
     .page-container {
         display: flex;
@@ -60,7 +59,6 @@ body {
     @include desktop {
         padding: 0;
         margin-top: 6.5em;
-        font-size: 1rem;
 
         .page-container {
             top: 0;

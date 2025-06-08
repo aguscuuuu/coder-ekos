@@ -1,8 +1,8 @@
-// top bar ______________________________________________________________________________________________________________________________________________________________
+// top bar ________________________________________________________________________________________________________________________________________________________
 .top-bar {
-    left: 0;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1100;
     overflow: hidden;
@@ -10,11 +10,16 @@
     color: white;
     border-bottom: 2px solid #e8d0c4;
     transition: transform 0.1s ease;
+    font-size: 1rem;
+    height: auto;
+    padding: 3px;
     
     p {
         margin: 0;
         font-weight: 500;
+        font-size: inherit;
         transition: text-shadow 0.3s ease;
+        font-size: 0.5rem;
     }
 
     &.hidden {
@@ -22,7 +27,7 @@
     }
 
     @include desktop {
-        height: 1.5rem;
+        height: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,15 +35,14 @@
         
         p {
             font-size: 0.8rem;
-            line-height: 1.5rem;
             
             &:hover {
-                text-shadow: 0 0 20px white, 0 0 30px white;
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             }
         }
     }
 }
-// header _______________________________________________________________________________________________________________________________________________________________
+// header ________________________________________________________________________________________________________________________________________________________
 header {
     position: fixed;
     z-index: 1000;
@@ -46,23 +50,11 @@ header {
     background-color: #f3e3db;
     border-bottom: 0.1875rem solid #e8d0c4;
     box-shadow: 0 0.3125rem 0.5rem rgba(0, 0, 0, 0.1);
-    
-    .top-bar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color: #93556c;
-        color: white;
-        font-weight: 500;
-        z-index: 1100;
-        border-bottom: 2px solid #e8d0c4;
-        
-        p {
-            margin: 0;
-        }
-    }
-    
+    display: grid;
+    grid-template-rows: auto auto auto;
+    margin-top: 0rem;
+    text-align: center;
+
     section {
         display: flex;
         justify-content: center;
@@ -73,6 +65,8 @@ header {
         img {
             height: auto;
             transition: transform 0.3s ease;
+            width: 7rem;
+            margin: 10px;
         }
     }
     
@@ -90,6 +84,7 @@ header {
             justify-content: center;
             padding: 0;
             margin: 0;
+            gap: 0.2rem;
             
             li {
                 display: flex;
@@ -103,6 +98,9 @@ header {
                     display: inline-block;
                     border-radius: 5px;
                     transition: background-color 0.3s;
+                    font-size: 0.7rem;
+                    margin: 0.2rem;
+                    padding: 0.2em 0.7em;
                     
                     &.active {
                         background-color: #e8d0c4;
@@ -111,42 +109,6 @@ header {
             }
         }
     }
-    
-    /* Mobile styles (base) */
-    display: grid;
-    grid-template-rows: auto auto auto;
-    top: 0;
-    text-align: center;
-    
-    .top-bar {
-        height: auto;
-        padding: 3px;
-        
-        p {
-            font-size: 0.65rem;
-        }
-    }
-    
-    .logo img {
-        width: 7rem;
-        margin: 10px;
-    }
-    
-    nav ul {
-        gap: 0.2rem;
-        
-        li a {
-            font-size: 0.7rem;
-            margin: 0.2rem;
-            padding: 0.2em 0.7em;
-        }
-    }
-    
-    @include tablet {
-        /* Tablet styles would go here */
-        /* Add your tablet-specific styles if needed */
-    }
-    
     @include desktop {
         top: 1.4em;
         display: flex;
@@ -177,7 +139,6 @@ header {
                 }
             }
         }
-        
         nav ul {
             gap: 1em;
             
@@ -193,4 +154,4 @@ header {
         }
     }
 }
-//_______________________________________________________________________________________________________________________________________________________________________
+// ______________________________________________________________________________________________________________________________________________________________________
