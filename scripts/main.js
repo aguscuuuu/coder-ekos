@@ -1,51 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Elementos del DOM
     const topBar = document.querySelector('.top-bar');
     const header = document.querySelector('header');
-    const links = document.querySelectorAll('header nav ul li a');
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navMenu = document.querySelector('nav');
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const mobileMenuPanel = document.querySelector('.mobile-menu-panel');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const closeMenuBtn = document.querySelector('.close-menu'); // Agregado
+    const body = document.body;
+    const desktopLinks = document.querySelectorAll('.desktop-nav a');
+    const mobileLinks = document.querySelectorAll('.mobile-menu-panel a');
 
-    // 1. Desactivar transiciones inicialmente
-    if (header) {
-        header.style.transition = 'none';
-    }
-    if (topBar) {
-        topBar.style.transition = 'none';
+    function disableInitialTransitions() {
+        if (header) header.style.transition = 'none';
+        if (topBar) topBar.style.transition = 'none';
     }
 
-    // 2. Función para ajustar la posición del header
     function adjustHeaderPosition(disableTransitions = false) {
-        if (topBar && header) {
-            if (disableTransitions) {
-                header.style.transition = 'none';
-                topBar.style.transition = 'none';
-            }
-            
-            if (topBar.classList.contains('hidden')) {
-                header.style.setProperty('--header-top', '0');
-            } else {
-                const topBarHeight = topBar.offsetHeight;
-                header.style.setProperty('--header-top', `${topBarHeight}px`);
-            }
-            
-            if (disableTransitions) {
-                // Forzar reflow para aplicar cambios sin transición
-                void header.offsetHeight;
-            }
+        if (!topBar || !header) return;
+
+        if (disableTransitions) {
+            header.style.transition = 'none';
+            topBar.style.transition = 'none';
+        }
+
+        const top = topBar.classList.contains('hidden') ? '0' : `${topBar.offsetHeight}px`;
+        header.style.setProperty('--header-top', top);
+
+        if (disableTransitions) {
+            void header.offsetHeight;
         }
     }
 
-    // 3. Configuración inicial (sin animaciones)
+    disableInitialTransitions();
     adjustHeaderPosition(true);
-    
-    // Reactivar transiciones después de la carga inicial
+
     setTimeout(() => {
         if (header) header.style.transition = '';
         if (topBar) topBar.style.transition = '';
     }, 50);
 
-    // 4. Observador para cambios en el top-bar
     if (topBar && header) {
         const observer = new MutationObserver(() => adjustHeaderPosition());
         observer.observe(topBar, {
@@ -56,13 +48,12 @@ document.addEventListener("DOMContentLoaded", function () {
         window.addEventListener('resize', () => adjustHeaderPosition());
     }
 
-    // 5. Comportamiento al hacer scroll
     if (topBar && header) {
         let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             if (scrollTop > lastScrollTop && scrollTop > 10) {
                 topBar.classList.add('hidden');
                 header.classList.add('shifted-up');
@@ -70,26 +61,58 @@ document.addEventListener("DOMContentLoaded", function () {
                 topBar.classList.remove('hidden');
                 header.classList.remove('shifted-up');
             }
-            
+
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
     }
 
-    // 6. Resaltar link activo
-    const currentPage = window.location.pathname.split('/').pop();
-    links.forEach(link => {
-        const linkPath = link.getAttribute('href').split('/').pop();
-        if (currentPage === linkPath || 
-            (currentPage === '' && linkPath === 'index.html')) {
-            link.classList.add('active');
-        }
-    });
+    function highlightActiveLink() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const allLinks = [...desktopLinks, ...mobileLinks];
 
-    // 7. Menú hamburguesa
-    if (hamburgerMenu && navMenu) {
-        hamburgerMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('show-menu');
-            hamburgerMenu.classList.toggle('is-active');
+        allLinks.forEach(link => {
+            const linkPath = link.getAttribute('href').split('/').pop();
+            if (currentPage === linkPath ||
+                (currentPage === '' && linkPath === 'index.html')) {
+                link.classList.add('active');
+            }
         });
     }
+
+    highlightActiveLink();
+
+    // 🔧 Actualizado: configuración del menú móvil
+    function setupMobileMenu() {
+        if (!hamburgerBtn || !mobileMenuPanel || !menuOverlay) return;
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenuPanel.classList.add('active');
+            menuOverlay.classList.add('active');
+            body.classList.add('no-scroll');
+        });
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener('click', closeMobileMenu);
+        }
+
+        menuOverlay.addEventListener('click', closeMobileMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    function closeMobileMenu() {
+        mobileMenuPanel.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.classList.remove('no-scroll');
+    }
+
+    setupMobileMenu();
 });
