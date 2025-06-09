@@ -1,37 +1,39 @@
-// top bar ________________________________________________________________________________________________________________________________________________________
+// top bar 
 .top-bar {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1100;
-    overflow: hidden;
     background-color: #93556c;
     color: white;
     border-bottom: 2px solid #e8d0c4;
-    transition: transform 0.1s ease;
+    transition: all 0.3s ease;
     font-size: 1rem;
     height: auto;
+    min-height: 1.5rem;
     padding: 3px;
+    transform: translateY(0);
     
     p {
         margin: 0;
         font-weight: 500;
-        font-size: inherit;
-        transition: text-shadow 0.3s ease;
         font-size: 0.5rem;
+        transition: text-shadow 0.3s ease;
+        padding: 0.2rem 0;
     }
-
+    
     &.hidden {
         transform: translateY(-100%);
     }
-
+    
     @include desktop {
-        height: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 0;
+        height: 2rem;
         
         p {
             font-size: 0.8rem;
@@ -42,116 +44,113 @@
         }
     }
 }
-// header ________________________________________________________________________________________________________________________________________________________
+
+// header 
 header {
     position: fixed;
     z-index: 1000;
     width: 100%;
     background-color: #f3e3db;
-    border-bottom: 0.1875rem solid #e8d0c4;
+    border-bottom: 2px solid #e8d0c4;
     box-shadow: 0 0.3125rem 0.5rem rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-rows: auto auto auto;
-    margin-top: 0rem;
-    text-align: center;
-
-    section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    margin-top: 0;
+    top: var(--header-top, 1.5rem);
+    transition: top 0.3s ease; /* Misma duración que el top-bar */
     
-    .logo {
-        img {
-            height: auto;
-            transition: transform 0.3s ease;
-            width: 7rem;
-            margin: 10px;
-        }
-    }
-    
-    nav {
+    .header-container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        flex-wrap: wrap;
-        width: 100%;
+        padding: 0.5rem 1rem;
         
-        ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            gap: 0.2rem;
+        .logo {
+            margin-bottom: 0.8rem;
             
-            li {
+            img {
+                height: auto;
+                width: 5rem;
+                transition: transform 0.3s ease;
+            }
+        }
+        
+        nav {
+            width: 100%;
+            
+            ul {
+                list-style: none;
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
-                align-items: center;
+                gap: 0.5rem;
+                padding: 0;
+                margin: 0;
                 
-                a {
-                    font-weight: 600;
-                    text-decoration: none;
-                    color: #362029;
-                    display: inline-block;
-                    border-radius: 5px;
-                    transition: background-color 0.3s;
-                    font-size: 0.7rem;
-                    margin: 0.2rem;
-                    padding: 0.2em 0.7em;
-                    
-                    &.active {
-                        background-color: #e8d0c4;
+                li {
+                    a {
+                        font-weight: 600;
+                        text-decoration: none;
+                        color: #362029;
+                        display: inline-block;
+                        border-radius: 5px;
+                        transition: all 0.3s;
+                        font-size: 0.5rem;
+                        padding: 0.4rem 0.8rem;
+                        background-color: rgba(232, 208, 196, 0.3);
+                        
+                        &.active {
+                            background-color: #e8d0c4;
+                        }
                     }
                 }
             }
         }
     }
+    
     @include desktop {
-        top: 1.4em;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 0.1em 1em;
-        transition: top 0.1s ease;
+        top: var(--header-top, calc(1.7em + 2rem));
         
         &.shifted-up {
-            top: 0;
+            top: var(--header-top, 2rem);
         }
         
-        .menu-toggle {
-            display: none;
-        }
-        
-        .logo {
-            margin-left: 5em;
-            margin-top: 0.5rem;
+        .header-container {
+            flex-direction: row;
+            grid-template-columns: 1fr 1fr;
+            padding: 0.5rem 2rem;
+            display: grid;
             
-            img {
-                max-width: 8em;
-                margin: 0.3rem 0;
+            .logo {
+                margin-bottom: 0;
+                justify-self: start;
                 
-                &:hover {
-                    transform: scale(0.98);
+                img {
+                    width: 8rem;
+                    
+                    &:hover {
+                        transform: scale(0.98);
+                    }
                 }
             }
-        }
-        nav ul {
-            gap: 1em;
             
-            li a {
-                padding: 0.5em 0.8em;
-                font-size: 1em;
-                border-radius: 0.3125rem;
+            nav {
+                width: auto;
                 
-                &:hover {
-                    background-color: #e8d0c4;
+                ul {
+                    flex-wrap: nowrap;
+                    justify-content: flex-end;
+                    gap: 1em;
+                    
+                    li a {
+                        font-size: 1rem;
+                        padding: 0.5em 0.8em;
+                        background-color: transparent;
+                        
+                        &:hover {
+                            background-color: #e8d0c4;
+                        }
+                    }
                 }
             }
         }
     }
 }
-// ______________________________________________________________________________________________________________________________________________________________________
