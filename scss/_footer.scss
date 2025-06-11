@@ -1,215 +1,168 @@
-// shallow footer _______________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// SHALLOW FOOTER
 .shallow-footer {
-    font-optical-sizing: auto;
-    text-align: left;
-    color: white;
-    border-top: 0.3125rem solid #e8d0c4;
-    display: grid;
-    box-sizing: border-box;
-    
-    h3 {
-        text-align: left;
-        border-bottom: 1px solid white;
-        color: #f5f5f5;
-        margin: 0;
-    }
-    
-    .footer-column {
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            
-            li {
-                a {
-                    text-decoration: none;
-                    color: white;
-                    display: inline-block;
-                }
-            }
-        }
-    }
-    
-    img {
-        filter: drop-shadow(0 0 0.1rem rgba(0,0,0,0.5));
-    }
-    
-    ::selection {
-        background-color: white;
-        color: #8c4e63;
-    }
-
-    /* Mobile styles (base) */
-    background-color: #8c4e63;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 1rem;
-    padding: 0.5rem;
-    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.6);
-    
-    h3 {
-        font-size: 0.7rem;
-        padding: 0.2rem;
-    }
-    
-    .footer-column ul li {
-        line-height: 1;
-        
-        a {
-            font-size: 0.7rem;
-        }
-    }
-    
-    img {
-        max-width: 1.5rem;
-    }
-
-    @include tablet {
-        /* Tablet styles would go here */
-        /* Add your tablet-specific styles if needed */
-    }
-
-    @include desktop {
-        background-color: #93556c;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        gap: 3em;
-        padding: 0.25rem 20rem;
-        box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.8);
-        
-        h3 {
-            font-size: 0.80rem;
-            padding: 0.3rem;
-            margin: 0.3125rem 0;
-        }
-        
-        .footer-column ul li {
-            a {
-                font-size: 0.75rem;
-                transition: text-shadow 0.3s ease;
-                
-                &:hover {
-                    text-shadow: 0 0 4px white;
-                }
-            }
-        }
-        
-        img {
-            max-width: 2.8rem;
-            transition: transform 0.3s ease;
-            padding: 0.1rem;
-            
-            &:hover {
-                transform: scale(0.95);
-            }
-        }
-        
-        ::selection {
-            color: #93556c;
-        }
-    }
+	font-optical-sizing: auto;
+	text-align: left;
+	color: white;
+	border-top: 0.3125rem solid #e8d0c4;
+	display: grid;
+	box-sizing: border-box;
+	background-color: #8c4e63;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, auto);
+	gap: 1rem;
+	padding: 0.5rem;
+	box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.6);
+	h3 {
+		text-align: left;
+		border-bottom: 1px solid white;
+		color: #f5f5f5;
+		margin: 0;
+	}
+	.footer-column {
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			li {
+				a {
+					text-decoration: none;
+					color: white;
+					display: inline-block;
+				}
+			}
+		}
+	}
+	img {
+		filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+	}
+	::selection {
+		background-color: white;
+		color: #8c4e63;
+	}
+	h3 {
+		font-size: 0.7rem;
+		padding: 0.2rem;
+	}
+	.footer-column ul li {
+		line-height: 1;
+		a {
+			font-size: 0.7rem;
+		}
+	}
+	img {
+		max-width: 1.5rem;
+	}
+	@include desktop {
+		background-color: #93556c;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: auto;
+		gap: 3em;
+		padding: 0.25rem 20rem;
+		box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.8);
+		h3 {
+			font-size: 0.8rem;
+			padding: 0.3rem;
+			margin: 0.3125rem 0;
+		}
+		.footer-column ul li {
+			a {
+				font-size: 0.75rem;
+				transition: text-shadow 0.3s ease;
+				&:hover {
+					text-shadow: 0 0 4px white;
+				}
+			}
+		}
+		img {
+			max-width: 2.8rem;
+			transition: transform 0.3s ease;
+			padding: 0.1rem;
+			&:hover {
+				transform: scale(0.95);
+			}
+		}
+		::selection {
+			color: #93556c;
+		}
+	}
 }
-// deep footer __________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// DEEP FOOTER
 .deep-footer {
-    font-optical-sizing: auto;
-    text-align: center;
-    color: white;
-    background-color: #753e52;
-    border-top: 5px solid #80455a;
-    
-    p {
-        margin-bottom: 0;
-        
-        b, a {
-            font-size: 0.5rem;
-        }
-        
-        a {
-            text-decoration: none;
-            color: white;
-        }
-    }
-    
-    ::selection {
-        background-color: white;
-        color: #93556c;
-    }
-
-    /* Mobile styles (base) */
-    padding: 4px;
-
-    @include tablet {
-        /* Tablet styles would go here */
-        /* Add your tablet-specific styles if needed */
-    }
-
-    @include desktop {
-        padding: 0.25rem 20rem;
-        
-        p {
-            font-size: 0.75rem;
-            
-            b, a {
-                font-size: 0.75rem;
-            }
-            
-            a {
-                transition: text-shadow 0.3s ease;
-                
-                &:hover {
-                    text-shadow: 0 0 4px white;
-                }
-            }
-        }
-    }
+	font-optical-sizing: auto;
+	text-align: center;
+	color: white;
+	background-color: #753e52;
+	border-top: 5px solid #80455a;
+	padding: 4px;
+	p {
+		margin-bottom: 0;
+		b,
+		a {
+			font-size: 0.5rem;
+		}
+		a {
+			text-decoration: none;
+			color: white;
+		}
+	}
+	::selection {
+		background-color: white;
+		color: #93556c;
+	}
+	@include desktop {
+		padding: 0.25rem 20rem;
+		p {
+			font-size: 0.75rem;
+			b,
+			a {
+				font-size: 0.75rem;
+			}
+			a {
+				transition: text-shadow 0.3s ease;
+				&:hover {
+					text-shadow: 0 0 4px white;
+				}
+			}
+		}
+	}
 }
-// footer creator _______________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// FOOTER CREATOR
 .creator {
-    display: flex;
-    justify-content: center;
-    background-color: #5c3040;
-    text-align: center;
-    color: white;
-    
-    p {
-        display: flex;
-        justify-content: center;
-        background-color: #753e52;
-        border-radius: 20px;
-        transition: box-shadow 0.3s ease;
-        
-        &:hover {
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-        }
-    }
-    
-    ::selection {
-        background-color: white;
-        color: #362029;
-    }
-
-    /* Mobile styles (base) */
-    padding: 0.25rem 0rem 2rem 0rem;
-    
-    p {
-        font-size: 0.5rem;
-        margin: 0.3rem;
-        padding: 0.5rem 2rem;
-    }
-
-    @include tablet {
-        /* Tablet styles would go here */
-        /* Add your tablet-specific styles if needed */
-    }
-
-    @include desktop {
-        padding: 0.25rem 0rem 1rem 0rem;
-        
-        p {
-            font-size: 0.75rem;
-            margin: 0.5rem;
-            padding: 0.5rem 5rem;
-        }
-    }
+	display: flex;
+	justify-content: center;
+	background-color: #5c3040;
+	text-align: center;
+	color: white;
+	padding: 0.25rem 0rem 2rem 0rem;
+	p {
+		display: flex;
+		justify-content: center;
+		background-color: #753e52;
+		border-radius: 20px;
+		transition: box-shadow 0.3s ease;
+		&:hover {
+			box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+		}
+	}
+	::selection {
+		background-color: white;
+		color: #362029;
+	}
+	p {
+		font-size: 0.5rem;
+		margin: 0.3rem;
+		padding: 0.5rem 2rem;
+	}
+	@include desktop {
+		padding: 0.25rem 0rem 1rem 0rem;
+		p {
+			font-size: 0.75rem;
+			margin: 0.5rem;
+			padding: 0.5rem 5rem;
+		}
+	}
 }
-//_______________________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶

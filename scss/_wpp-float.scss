@@ -1,0 +1,30 @@
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// WHATSAPP FLOAT
+.whatsapp-float {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	border-radius: 8.75rem;
+	z-index: 100;
+	box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.3);
+	display: flex;
+	img {
+		width: 3rem;
+		height: auto;
+	}
+	@include desktop {
+		bottom: 5rem;
+		right: 0.3rem;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease;
+		img {
+			width: 3.75rem;
+			height: 3.75rem;
+		}
+		&:hover {
+			transform: scale(1.04);
+		}
+	}
+}
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶

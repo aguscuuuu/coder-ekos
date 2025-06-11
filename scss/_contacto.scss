@@ -1,215 +1,199 @@
-// contacto _____________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// CONTACTO.HTML
 .contacto-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
-    
-    .contacto-info, .contacto-formulario {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        background-color: #fff9f4;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    gap: 2rem;
-    margin: 3rem 1rem;
-    
-    .contacto-info, .contacto-formulario {
-        min-width: 250px;
-        max-width: 100%;
-        padding: 1rem;
-        min-height: 30em;
-    }
-
-    @include tablet {
-        gap: 3rem;
-        margin: 3rem 2rem;
-        
-        .contacto-info, .contacto-formulario {
-            min-width: 280px;
-            padding: 1.5rem;
-            min-height: 35em;
-        }
-    }
-
-    @include desktop {
-        gap: 5rem;
-        margin-top: 2rem;
-        margin-bottom: 5rem;
-        
-        .contacto-info, .contacto-formulario {
-            min-width: 300px;
-            max-width: 500px;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            min-height: 40em;
-        }
-    }
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+	.contacto-info,
+	.contacto-formulario {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		background-color: #fff9f4;
+		border-radius: 0.5rem;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	}
+	gap: 2rem;
+	margin: 3rem 1rem;
+	.contacto-info,
+	.contacto-formulario {
+		min-width: 250px;
+		max-width: 100%;
+		padding: 1rem;
+		min-height: 30em;
+	}
+	@include tablet {
+		gap: 3rem;
+		margin: 3rem 2rem;
+		.contacto-info,
+		.contacto-formulario {
+			min-width: 280px;
+			padding: 1.5rem;
+			min-height: 35em;
+		}
+	}
+	@include desktop {
+		gap: 5rem;
+		margin-top: 2rem;
+		margin-bottom: 5rem;
+		.contacto-info,
+		.contacto-formulario {
+			min-width: 300px;
+			max-width: 500px;
+			padding: 2rem;
+			border-radius: 1rem;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+			min-height: 40em;
+		}
+	}
 }
-// info _________________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// INFO SECTION
 .contacto-info {
-    & h4, .contacto-formulario h4 {
-        text-align: center;
-        color: #362029;
-    }
-
-    p {
-        text-align: center;
-    }
-
-    .info-item {
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        background-color: white;
-        border: 1px solid #ddd;
-        
-        a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-
-            p {
-                margin: 0;
-                display: flex;
-                align-items: center;
-                height: 100%;
-                font-weight: 600;
-                color: #362029;
-                transition: color 0.3s ease;
-
-                &:hover {
-                    color: #93556c;
-                    cursor: pointer;
-                }
-            }
-        }
-
-        img {
-            height: auto;
-            filter: invert(40%) sepia(15%) saturate(1342%) hue-rotate(286deg) brightness(90%) contrast(86%);
-            transition: filter 0.3s ease;
-
-            &:hover {
-                filter: invert(30%) sepia(22%) saturate(1080%) hue-rotate(288deg) brightness(95%) contrast(82%);
-                cursor: pointer;
-            }
-        }
-    }
-
-    & h4, .contacto-formulario h4 {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        font-size: 0.8rem;
-    }
-
-    .info-item {
-        margin-top: 1.5em;
-        border-radius: 8px;
-        padding: 0.5rem;
-
-        img {
-            width: 35px;
-            margin-right: 0.8rem;
-        }
-
-        p {
-            font-size: 0.8rem;
-        }
-    }
-
-    @include desktop {
-        & h4, .contacto-formulario h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-item {
-            margin-top: 2.5em;
-            border-radius: 10px;
-            padding: 1rem;
-
-            img {
-                width: 50px;
-                margin-right: 1rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-    }
+	& h4,
+	.contacto-formulario h4 {
+		text-align: center;
+		color: #362029;
+	}
+	p {
+		text-align: center;
+	}
+	.info-item {
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		background-color: white;
+		border: 1px solid #ddd;
+		a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			p {
+				margin: 0;
+				display: flex;
+				align-items: center;
+				height: 100%;
+				font-weight: 600;
+				color: #362029;
+				transition: color 0.3s ease;
+				&:hover {
+					color: #93556c;
+					cursor: pointer;
+				}
+			}
+		}
+		img {
+			height: auto;
+			filter: invert(40%) sepia(15%) saturate(1342%) hue-rotate(286deg) brightness(90%) contrast(86%);
+			transition: filter 0.3s ease;
+			&:hover {
+				filter: invert(30%) sepia(22%) saturate(1080%) hue-rotate(288deg) brightness(95%) contrast(82%);
+				cursor: pointer;
+			}
+		}
+	}
+	& h4,
+	.contacto-formulario h4 {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+	p {
+		font-size: 0.8rem;
+	}
+	.info-item {
+		margin-top: 1.5em;
+		border-radius: 0.5rem;
+		padding: 0.5rem;
+		img {
+			width: 35px;
+			margin-right: 0.8rem;
+		}
+		p {
+			font-size: 0.8rem;
+		}
+	}
+	@include desktop {
+		& h4,
+		.contacto-formulario h4 {
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+		.info-item {
+			margin-top: 2.5em;
+			border-radius: 10px;
+			padding: 1rem;
+			img {
+				width: 50px;
+				margin-right: 1rem;
+			}
+			p {
+				font-size: 1rem;
+			}
+		}
+	}
 }
-// formulary ____________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// FORMULARY SECTION
 .contacto-formulario {
-    input[type="text"], input[type="email"], textarea {
-        width: 100%;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        transition: border-color 0.3s ease;
-        resize: none;
-
-        &:focus {
-            border-color: #93556c;
-            outline: none;
-        }
-    }
-
-    label {
-        display: block;
-        margin: 1rem 0 0.3rem;
-        font-weight: 600;
-        color: #362029;
-        font-size: 0.8rem;
-    }
-
-    input[type="text"], input[type="email"], textarea {
-        padding: 0.3rem;
-        font-size: 0.8rem;
-    }
-
-    textarea {
-        height: 150px;
-    }
-
-    input[type="submit"] {
-        margin-top: 1.5rem;
-        background-color: #93556c;
-        color: white;
-        font-weight: bold;
-        padding: 0.8rem 1.2rem;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        width: 100%;
-        transition: background-color 0.3s ease;
-        font-size: 0.8rem;
-
-        &:hover {
-            background-color: #80475b;
-        }
-    }
-
-    @include desktop {
-        label {
-            font-size: 1rem;
-        }
-
-        input[type="text"], input[type="email"], textarea {
-            padding: 0.8rem;
-            font-size: 1rem;
-        }
-
-        input[type="submit"] {
-            font-size: 1rem;
-        }
-    }
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		width: 100%;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		transition: border-color 0.3s ease;
+		resize: none;
+		&:focus {
+			border-color: #93556c;
+			outline: none;
+		}
+	}
+	label {
+		display: block;
+		margin: 1rem 0 0.3rem;
+		font-weight: 600;
+		color: #362029;
+		font-size: 0.8rem;
+	}
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		padding: 0.3rem;
+		font-size: 0.8rem;
+	}
+	textarea {
+		height: 150px;
+	}
+	input[type="submit"] {
+		margin-top: 1.5rem;
+		background-color: #93556c;
+		color: white;
+		font-weight: bold;
+		padding: 0.8rem 1.2rem;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		width: 100%;
+		transition: background-color 0.3s ease;
+		font-size: 0.8rem;
+		&:hover {
+			background-color: #80475b;
+		}
+	}
+	@include desktop {
+		label {
+			font-size: 1rem;
+		}
+		input[type="text"],
+		input[type="email"],
+		textarea {
+			padding: 0.8rem;
+			font-size: 1rem;
+		}
+		input[type="submit"] {
+			font-size: 1rem;
+		}
+	}
 }
-//_______________________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶

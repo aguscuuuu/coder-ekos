@@ -1,29 +1,31 @@
-// politica _____________________________________________________________________________________________________________________________________________________________*/
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+// CAMBIO-DEV.HTML
 .politica {
-    border-radius: 20px;
-    background-color: #fff9f4;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    text-align: justify;
-    
-    p, li {
-        font-size: 0.8rem;
-    }
-    
-    h4 {
-        font-size: 0.9rem;
-    }
-    
-    max-width: 100%;
-    margin: 2rem 1rem 0 1rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    box-sizing: border-box;
-    
-    @include desktop {
-        max-width: 1500px;
-        margin: 0 auto;
-        padding: 2rem;
-        margin-bottom: 3rem;
-    }
+	border-radius: 1rem;
+	background-color: #fff9f4;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+	text-align: justify;
+
+	p,
+	li {
+		font-size: 0.8rem;
+	}
+
+	h4 {
+		font-size: 0.9rem;
+	}
+
+	max-width: 100%;
+	margin: 2rem 1rem 0 1rem;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	box-sizing: border-box;
+
+	@include desktop {
+		max-width: 1500px;
+		margin: 0 auto;
+		padding: 2rem;
+		margin-bottom: 3rem;
+	}
 }
-//_______________________________________________________________________________________________________________________________________________________________________
+//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
