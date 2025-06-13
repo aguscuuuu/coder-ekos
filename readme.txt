@@ -1,55 +1,58 @@
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║     █████╗  ██████╗ ██╗   ██╗███████╗████████╗██╗███╗   ██╗      ║
-║    ██╔══██╗██╔════╝ ██║   ██║██╔════╝╚══██╔══╝██║████╗  ██║      ║
-║    ███████║██║  ███╗██║   ██║███████╗   ██║   ██║██╔██╗ ██║      ║
-║    ██╔══██║██║   ██║██║   ██║╚════██║   ██║   ██║██║╚██╗██║      ║
-║    ██║  ██║╚██████╔╝╚██████╔╝███████║   ██║   ██║██║ ╚████║      ║
-║    ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝   ╚═╝   ╚═╝╚═╝  ╚═══╝      ║
-║                                                                  ║
-║        ██████╗ ██╗   ██╗███████╗███╗   ██╗ ██████╗ █████╗        ║
-║       ██╔════╝ ██║   ██║██╔════╝████╗  ██║██╔════╝██╔══██╗       ║
-║       ██║      ██║   ██║█████╗  ██╔██╗ ██║██║     ███████║       ║
-║       ██║      ██║   ██║██╔══╝  ██║╚██╗██║██║     ██╔══██║       ║
-║       ╚██████╗ ╚██████╔╝███████╗██║ ╚████║╚██████╗██║  ██║       ║
-║        ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝  ╚═╝       ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-
-════════════════════════════════════════════════════════════════════
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 TITLE
 Ekos Accesorios
-════════════════════════════════════════════════════════════════════
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 DESCRIPTION
-EKOS es un emprendimiento de accesorios.
-════════════════════════════════════════════════════════════════════
+Ekos is an online store for fine jewelry and fashion accessories, where users can discover 
+and purchase exclusive design necklaces, earrings, and bracelets. The site provides 
+information about products, payment methods, shipping options, exchange policies, and 
+contact, offering a safe and personalized shopping experience for customers throughout 
+Argentina.
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 STATUS
 In progress
-════════════════════════════════════════════════════════════════════
-DEMONSTRATION OF FEATURES AND APPLICATIONS
-
-════════════════════════════════════════════════════════════════════
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+VERSION
+0.8.0 June 2025                                   
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 ACCESS
-Repository:  [https://github.com/aguscuuuu/coder-ekos.git]
-Web site:    [                                           ]
-Download :   [                                           ]
-════════════════════════════════════════════════════════════════════
+Wireframe   | /pdf/wireframe.pdf                          
+Repository  | https://github.com/aguscuuuu/coder-ekos.git 
+Web site    |                                                     
+Download    |                                                     
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 USED TECHNOLOGIES
-Languages:       [ HTML | CSS | SCSS | JavaScript ]
-Frameworks:      [ Bootstrap                      ]
-Databases:       [                                ]
-Tools:           [                                ]
-Platforms:       [                                ]
-════════════════════════════════════════════════════════════════════
+Languages   | HTML | CSS | SCSS | JavaScript              
+Frameworks  | Bootstrap                                   
+Databases   |                                                    
+Tools       |                                                        
+Platforms   |                                                    
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 DEVELOPERS & CONTRIBUTORS
-- Agustin Cuenca [AgustinCuenca] [aguabentura08@gmail.com] - MAIN ROLE
-════════════════════════════════════════════════════════════════════
+- Agustin Cuenca [AgustinCuenca] [aguabentura08@gmail.com] | Main Developer
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 LICENSE
-...
 
-Copyright © 2025 Agustin Cuenca
+This work has been dedicated to the public domain under the Creative Commons CC0 1.0 
+Universal Public Domain Dedication.
 
-Permission is granted to use, copy, modify, and distribute this software 
-and its documentation for any purpose without fee, provided that the above 
-copyright notice and this permission notice are included in all copies.
-════════════════════════════════════════════════════════════════════
+To the extent possible under law, the author has waived all copyright and related or 
+neighboring rights to this work.
+
+You can copy, modify, distribute and perform the work, even for commercial purposes, all 
+ithout asking permission.
+
+2025
+cueCode_ Software.
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+ 
+                                       ______          __              
+                      _______  _____  / ____/___  ____/ /__            
+                     / ___/ / / / _ \/ /   / __ \/ __  / _ \           
+                   / /__/ /_/ /  __/ /___/ /_/ / /_/ /  __/                  
+                    \___/\__,_/\___/\____/\____/\__,_/\___/_______    
+                      / ___/____  / __/ /__      ______ _________      
+                      \__ \/ __ \/ /_/ __/ | /| / / __ `/ ___/ _ \     
+                     ___/ / /_/ / __/ /_ | |/ |/ / /_/ / /  /  __/     
+                    /____/\____/_/  \__/ |__/|__/\__,_/_/   \___/  
