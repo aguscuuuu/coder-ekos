@@ -1,14 +1,16 @@
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 // WEBKIT NAVEGATOR SCROLLBAR
 ::-webkit-scrollbar {
-	width: 7px;
+	width: 9px;
 }
 ::-webkit-scrollbar-track {
-	background: $cream5;
+	background: $cream2;
+	border: 1px solid $cream1;
 }
 ::-webkit-scrollbar-thumb {
 	background: $wine8;
 	transition: background 0.3s ease;
+	border: 1px solid $wine7;
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: $wine6;

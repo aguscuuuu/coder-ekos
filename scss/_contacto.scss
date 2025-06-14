@@ -121,7 +121,7 @@
 		}
 		.info-item {
 			margin-top: 2.5em;
-			border-radius: 10px;
+			border-radius: 1rem;
 			padding: 1rem;
 			img {
 				width: 50px;
@@ -141,7 +141,7 @@
 	textarea {
 		width: 100%;
 		border: 1px solid #ddd;
-		border-radius: 10px;
+		border-radius: 1rem;
 		transition: border-color 0.3s ease;
 		resize: none;
 		&:focus {
