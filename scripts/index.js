@@ -65,26 +65,29 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
-	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
 	let touchStartX = 0;
 	let touchCurrentX = 0;
 	let isSwiping = false;
+	let startTranslateX = 0;
 
 	function handleTouchStart(e) {
 		touchStartX = e.touches[0].clientX;
 		touchCurrentX = touchStartX;
 		isSwiping = true;
-		// Detener transición para feedback visual inmediato
+		const slideWidth = slides[0].clientWidth;
+		// Calcula la posición inicial del track
+		startTranslateX = -currentIndex * slideWidth;
 		track.style.transition = "none";
 	}
 
 	function handleTouchMove(e) {
 		if (!isSwiping) return;
 		touchCurrentX = e.touches[0].clientX;
-		const slideWidth = slides[0].clientWidth;
 		const moveX = touchCurrentX - touchStartX;
-		// Mueve el track visualmente mientras se arrastra
-		track.style.transform = `translateX(-${currentIndex * slideWidth - moveX}px)`;
+		// Mueve el track visualmente mientras se arrastra el dedo
+		track.style.transform = `translateX(${startTranslateX + moveX}px)`;
+		// Opcional: evitar scroll horizontal de la página
+		e.preventDefault();
 	}
 
 	function handleTouchEnd() {
@@ -93,22 +96,19 @@ document.addEventListener("DOMContentLoaded", function () {
 		const swipeThreshold = 50; // mínima distancia para considerar swipe
 		const diff = touchCurrentX - touchStartX;
 		const slideWidth = slides[0].clientWidth;
-		// Restaurar transición
-		track.style.transition = "";
+		track.style.transition = ""; // restaurar transición
 
 		if (Math.abs(diff) > swipeThreshold) {
 			stopAutoSlide();
 			if (diff < 0) {
-				// swipe izquierda: siguiente
 				currentIndex = (currentIndex + 1) % slideCount;
 			} else {
-				// swipe derecha: anterior
 				currentIndex = (currentIndex - 1 + slideCount) % slideCount;
 			}
 			updateSlide(currentIndex);
 			startAutoSlide();
 		} else {
-			// Si no supera el umbral, vuelve al slide actual
+			// Si no supera el umbral, vuelve al slide actual suavemente
 			track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 		}
 	}
