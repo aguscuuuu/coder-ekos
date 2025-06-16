@@ -1,7 +1,7 @@
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 // PRODUCTOS.HTML
 .categoria {
-	margin: 2rem auto;
+	margin: 1rem auto;
 	padding: 0 1rem;
 	margin-bottom: 2rem;
 	h3 {
@@ -47,14 +47,14 @@
 	}
 	@include desktop {
 		margin: 1rem auto;
-		padding: 0.5rem 4rem 4rem 4rem;
+		padding: 2rem 4rem 4rem 4rem;
 		max-width: 60rem;
 		margin-bottom: 4rem;
-		background-color: #f3e3db;
 		border-radius: 15px;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		h3 {
 			font-size: 25px;
+			padding-bottom: 1rem;
 		}
 		.galeria-productos {
 			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

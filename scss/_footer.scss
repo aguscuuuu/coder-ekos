@@ -132,6 +132,7 @@
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 // FOOTER CREATOR
 .creator {
+	font-family: $font-secondary;
 	display: flex;
 	justify-content: center;
 	background-color: #5c3040;
@@ -139,6 +140,7 @@
 	color: white;
 	padding: 0.25rem 0rem 2rem 0rem;
 	p {
+		font-family: $font-secondary;
 		display: flex;
 		justify-content: center;
 		background-color: #753e52;
@@ -159,7 +161,9 @@
 	}
 	@include desktop {
 		padding: 0.25rem 0rem 1rem 0rem;
+		font-family: $font-secondary;
 		p {
+			font-family: $font-secondary;
 			font-size: 0.75rem;
 			margin: 0.5rem;
 			padding: 0.5rem 5rem;

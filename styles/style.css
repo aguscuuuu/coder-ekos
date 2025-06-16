@@ -1,5 +1,6 @@
 body {
-  padding: 0px;
+  padding: 0;
+  margin: 0;
   height: 100%;
   width: 100%;
   font-optical-sizing: auto;
@@ -10,7 +11,7 @@ body .page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  top: 1rem;
+  top: 0;
 }
 body .page-container::selection {
   background-color: #93556c;
@@ -18,7 +19,7 @@ body .page-container::selection {
 }
 body .page-container .content {
   flex: 1;
-  margin-top: 9rem;
+  margin-top: 0;
 }
 body .sr-only {
   position: absolute;
@@ -33,7 +34,6 @@ body .sr-only {
 body h2,
 body h3,
 body h4 {
-  text-align: center;
   font-weight: bold;
 }
 body h2 {
@@ -45,19 +45,13 @@ body h3 {
 @media (min-width: 1024px) {
   body {
     padding: 0;
-    margin-top: 6.5em;
+    margin-top: 1rem;
   }
   body .page-container {
     top: 0;
   }
   body .page-container .content {
     margin-top: 0;
-  }
-  body h2 {
-    display: block;
-    padding: 1rem;
-    margin: 0;
-    font-size: 1.5rem;
   }
 }
 
@@ -148,7 +142,7 @@ body h3 {
     align-items: center;
     justify-content: center;
     max-width: 1200px;
-    margin: 1rem auto;
+    margin: 0 auto;
     gap: 1rem;
     padding: 0 50px;
   }
@@ -532,6 +526,7 @@ body h3 {
   }
   .newsletter label {
     margin-right: 1rem;
+    font-size: 1rem;
   }
   .newsletter input[type=email] {
     font-size: 1rem;
@@ -555,7 +550,7 @@ body h3 {
 }
 
 .categoria {
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 0 1rem;
   margin-bottom: 2rem;
 }
@@ -603,15 +598,15 @@ body h3 {
 @media (min-width: 1024px) {
   .categoria {
     margin: 1rem auto;
-    padding: 0.5rem 4rem 4rem 4rem;
+    padding: 2rem 4rem 4rem 4rem;
     max-width: 60rem;
     margin-bottom: 4rem;
-    background-color: #f3e3db;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   .categoria h3 {
     font-size: 25px;
+    padding-bottom: 1rem;
   }
   .categoria .galeria-productos {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -638,7 +633,7 @@ body h3 {
   align-items: stretch;
   flex-wrap: wrap;
   gap: 2rem;
-  margin: 3rem 1rem;
+  margin: 1rem 1rem;
 }
 .contacto-container .contacto-info,
 .contacto-container .contacto-formulario {
@@ -648,13 +643,22 @@ body h3 {
   background-color: #fff9f4;
   border-radius: 0.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-.contacto-container .contacto-info,
-.contacto-container .contacto-formulario {
   min-width: 250px;
   max-width: 100%;
   padding: 1rem;
   min-height: 30em;
+}
+.contacto-container .contacto-info h4,
+.contacto-container .contacto-formulario h4 {
+  text-align: center;
+  color: #362029;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.contacto-container .contacto-info p,
+.contacto-container .contacto-formulario p {
+  text-align: center;
+  font-size: 0.8rem;
 }
 @media (min-width: 768px) {
   .contacto-container {
@@ -666,6 +670,15 @@ body h3 {
     min-width: 280px;
     padding: 1.5rem;
     min-height: 35em;
+  }
+  .contacto-container .contacto-info h4,
+  .contacto-container .contacto-formulario h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .contacto-container .contacto-info p,
+  .contacto-container .contacto-formulario p {
+    font-size: 0.9rem;
   }
 }
 @media (min-width: 1024px) {
@@ -683,22 +696,26 @@ body h3 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     min-height: 40em;
   }
+  .contacto-container .contacto-info h4,
+  .contacto-container .contacto-formulario h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .contacto-container .contacto-info p,
+  .contacto-container .contacto-formulario p {
+    font-size: 1rem;
+  }
 }
 
-.contacto-info h4,
-.contacto-info .contacto-formulario h4 {
-  text-align: center;
-  color: #362029;
-}
-.contacto-info p {
-  text-align: center;
-}
 .contacto-info .info-item {
   display: flex;
   align-items: center;
   justify-content: left;
   background-color: white;
   border: 1px solid #ddd;
+  margin-top: 1.5em;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 .contacto-info .info-item a {
   display: flex;
@@ -719,7 +736,9 @@ body h3 {
   cursor: pointer;
 }
 .contacto-info .info-item img {
+  width: 35px;
   height: auto;
+  margin-right: 0.8rem;
   filter: invert(40%) sepia(15%) saturate(1342%) hue-rotate(286deg) brightness(90%) contrast(86%);
   transition: filter 0.3s ease;
 }
@@ -727,32 +746,7 @@ body h3 {
   filter: invert(30%) sepia(22%) saturate(1080%) hue-rotate(288deg) brightness(95%) contrast(82%);
   cursor: pointer;
 }
-.contacto-info h4,
-.contacto-info .contacto-formulario h4 {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-.contacto-info p {
-  font-size: 0.8rem;
-}
-.contacto-info .info-item {
-  margin-top: 1.5em;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-}
-.contacto-info .info-item img {
-  width: 35px;
-  margin-right: 0.8rem;
-}
-.contacto-info .info-item p {
-  font-size: 0.8rem;
-}
 @media (min-width: 1024px) {
-  .contacto-info h4,
-  .contacto-info .contacto-formulario h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
   .contacto-info .info-item {
     margin-top: 2.5em;
     border-radius: 1rem;
@@ -772,9 +766,11 @@ body h3 {
 .contacto-formulario textarea {
   width: 100%;
   border: 1px solid #ddd;
-  border-radius: 1rem;
+  border-radius: 8px;
   transition: border-color 0.3s ease;
   resize: none;
+  padding: 0.3rem;
+  font-size: 0.8rem;
 }
 .contacto-formulario input[type=text]:focus,
 .contacto-formulario input[type=email]:focus,
@@ -789,12 +785,6 @@ body h3 {
   color: #362029;
   font-size: 0.8rem;
 }
-.contacto-formulario input[type=text],
-.contacto-formulario input[type=email],
-.contacto-formulario textarea {
-  padding: 0.3rem;
-  font-size: 0.8rem;
-}
 .contacto-formulario textarea {
   height: 150px;
 }
@@ -805,7 +795,7 @@ body h3 {
   font-weight: bold;
   padding: 0.8rem 1.2rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   width: 100%;
   transition: background-color 0.3s ease;
@@ -831,17 +821,15 @@ body h3 {
 
 .local {
   max-width: 100%;
-  margin: 2rem 1rem;
+  margin: 1rem 1rem;
   padding: 1rem;
   border-radius: 20px;
   background-color: #fff9f4;
-  margin-bottom: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   font-size: 0.8rem;
   box-sizing: border-box;
 }
 .local h4 {
-  margin-top: 0.5em;
   font-size: 1.2em;
   margin-bottom: 1.5rem;
 }
@@ -892,17 +880,19 @@ body h3 {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: justify;
   max-width: 100%;
-  margin: 2rem 1rem 0 1rem;
+  margin: 1rem 1rem 1rem 1rem;
   padding: 1rem;
-  margin-bottom: 2rem;
   box-sizing: border-box;
 }
 .politica p,
 .politica li {
   font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
 }
 .politica h4 {
   font-size: 0.9rem;
+  text-align: left;
 }
 @media (min-width: 1024px) {
   .politica {
@@ -910,6 +900,13 @@ body h3 {
     margin: 0 auto;
     padding: 2rem;
     margin-bottom: 3rem;
+  }
+  .politica p,
+  .politica li {
+    font-size: 1rem;
+  }
+  .politica h4 {
+    font-size: 1.2rem;
   }
 }
 
@@ -1034,6 +1031,11 @@ header .header-container .desktop-nav ul {
   padding: 0;
   margin: 0;
 }
+header .header-container .desktop-nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 header .header-container .desktop-nav ul li a {
   font-weight: 600;
   text-decoration: none;
@@ -1044,6 +1046,7 @@ header .header-container .desktop-nav ul li a {
   font-size: 0.5rem;
   padding: 0.4rem 0.8rem;
   background-color: rgba(232, 208, 196, 0.3);
+  text-align: center;
 }
 header .header-container .desktop-nav ul li a.active {
   background-color: #e8d0c4;
@@ -1294,6 +1297,7 @@ header .header-container .menu-overlay.active {
 }
 
 .creator {
+  font-family: "Orbitron", sans-serif;
   display: flex;
   justify-content: center;
   background-color: #5c3040;
@@ -1302,6 +1306,7 @@ header .header-container .menu-overlay.active {
   padding: 0.25rem 0rem 2rem 0rem;
 }
 .creator p {
+  font-family: "Orbitron", sans-serif;
   display: flex;
   justify-content: center;
   background-color: #753e52;
@@ -1323,8 +1328,10 @@ header .header-container .menu-overlay.active {
 @media (min-width: 1024px) {
   .creator {
     padding: 0.25rem 0rem 1rem 0rem;
+    font-family: "Orbitron", sans-serif;
   }
   .creator p {
+    font-family: "Orbitron", sans-serif;
     font-size: 0.75rem;
     margin: 0.5rem;
     padding: 0.5rem 5rem;

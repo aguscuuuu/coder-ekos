@@ -1,7 +1,8 @@
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 // BODY
 body {
-	padding: 0px;
+	padding: 0;
+	margin: 0;
 	height: 100%;
 	width: 100%;
 	font-optical-sizing: auto;
@@ -11,14 +12,14 @@ body {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		top: 1rem;
+		top: 0;
 		&::selection {
 			background-color: #93556c;
 			color: white;
 		}
 		.content {
 			flex: 1;
-			margin-top: 9rem;
+			margin-top: 0;
 		}
 	}
 	.sr-only {
@@ -35,7 +36,6 @@ body {
 	h2,
 	h3,
 	h4 {
-		text-align: center;
 		font-weight: bold;
 	}
 	h2 {
@@ -46,18 +46,12 @@ body {
 	}
 	@include desktop {
 		padding: 0;
-		margin-top: 6.5em;
+		margin-top: 1rem;
 		.page-container {
 			top: 0;
 			.content {
 				margin-top: 0;
 			}
-		}
-		h2 {
-			display: block;
-			padding: 1rem;
-			margin: 0;
-			font-size: 1.5rem;
 		}
 	}
 }
