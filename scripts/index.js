@@ -66,53 +66,52 @@ document.addEventListener("DOMContentLoaded", function () {
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
 	let touchStartX = 0;
-	let touchCurrentX = 0;
-	let isSwiping = false;
+	let isDragging = false;
+	let animationFrameId = null;
 	let startTranslateX = 0;
 
 	function handleTouchStart(e) {
 		touchStartX = e.touches[0].clientX;
-		touchCurrentX = touchStartX;
-		isSwiping = true;
-		const slideWidth = slides[0].clientWidth;
-		// Calcula la posición inicial del track
-		startTranslateX = -currentIndex * slideWidth;
+		isDragging = true;
+		startTranslateX = -currentIndex * slides[0].clientWidth;
 		track.style.transition = "none";
+		cancelAnimationFrame(animationFrameId);
 	}
 
 	function handleTouchMove(e) {
-		if (!isSwiping) return;
-		touchCurrentX = e.touches[0].clientX;
-		const moveX = touchCurrentX - touchStartX;
-		// Mueve el track visualmente mientras se arrastra el dedo
-		track.style.transform = `translateX(${startTranslateX + moveX}px)`;
-		// Opcional: evitar scroll horizontal de la página
+		if (!isDragging) return;
+
+		const touchX = e.touches[0].clientX;
+		const moveX = touchX - touchStartX;
+		const currentTranslateX = startTranslateX + moveX;
+
+		track.style.transform = `translateX(${currentTranslateX}px)`;
 		e.preventDefault();
 	}
 
-	function handleTouchEnd() {
-		if (!isSwiping) return;
-		isSwiping = false;
-		const swipeThreshold = 50; // mínima distancia para considerar swipe
-		const diff = touchCurrentX - touchStartX;
-		const slideWidth = slides[0].clientWidth;
-		track.style.transition = ""; // restaurar transición
+	function handleTouchEnd(e) {
+		if (!isDragging) return;
+		isDragging = false;
 
-		if (Math.abs(diff) > swipeThreshold) {
+		const touchEndX = e.changedTouches[0].clientX;
+		const movedX = touchEndX - touchStartX;
+		const slideWidth = slides[0].clientWidth;
+
+		if (Math.abs(movedX) > slideWidth / 4) {
 			stopAutoSlide();
-			if (diff < 0) {
-				currentIndex = (currentIndex + 1) % slideCount;
-			} else {
-				currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+			if (movedX < 0 && currentIndex < slideCount - 1) {
+				currentIndex++;
+			} else if (movedX > 0 && currentIndex > 0) {
+				currentIndex--;
 			}
-			updateSlide(currentIndex);
-			startAutoSlide();
-		} else {
-			// Si no supera el umbral, vuelve al slide actual suavemente
-			track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 		}
+		// Suavizar la animación
+		track.style.transition = "transform 0.3s ease";
+		updateSlide(currentIndex);
+		startAutoSlide();
 	}
 
+	// Eventos táctiles
 	track.addEventListener("touchstart", handleTouchStart, {passive: true});
 	track.addEventListener("touchmove", handleTouchMove, {passive: false});
 	track.addEventListener("touchend", handleTouchEnd, {passive: true});
