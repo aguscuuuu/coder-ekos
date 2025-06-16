@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		stopAutoSlide();
 		isSwiping = true;
 		startX = e.touches[0].clientX;
+		endX = startX; // Reinicia endX en cada inicio de swipe
 	});
 
 	track.addEventListener("touchmove", (e) => {
@@ -95,11 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		const diff = endX - startX;
 		const threshold = 50; // Mínima distancia para considerar swipe
 		if (diff > threshold) {
-			// Swipe a la derecha (slide anterior)
 			currentIndex = (currentIndex - 1 + slideCount) % slideCount;
 			updateSlide(currentIndex);
 		} else if (diff < -threshold) {
-			// Swipe a la izquierda (slide siguiente)
 			currentIndex = (currentIndex + 1) % slideCount;
 			updateSlide(currentIndex);
 		}
