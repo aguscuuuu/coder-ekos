@@ -4,33 +4,32 @@ document.addEventListener("DOMContentLoaded", function () {
 	const hamburgerBtn = document.querySelector(".hamburger-btn");
 	const mobileMenuPanel = document.querySelector(".mobile-menu-panel");
 	const menuOverlay = document.querySelector(".menu-overlay");
-	const closeMenuBtn = document.querySelector(".close-menu"); // Agregado
+	const closeMenuBtn = document.querySelector(".close-menu");
 	const body = document.body;
 	const desktopLinks = document.querySelectorAll(".desktop-nav a");
 	const mobileLinks = document.querySelectorAll(".mobile-menu-panel a");
-
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// deshabilita las transiciones iniciales del header y la top-bar
 	function disableInitialTransitions() {
 		if (header) header.style.transition = "none";
 		if (topBar) topBar.style.transition = "none";
 	}
-
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// ajusta la posición del header según la visibilidad de la top-bar
 	function adjustHeaderPosition(disableTransitions = false) {
 		if (!topBar || !header) return;
-
 		if (disableTransitions) {
 			header.style.transition = "none";
 			topBar.style.transition = "none";
 		}
-
 		const top = topBar.classList.contains("hidden") ? "0" : `${topBar.offsetHeight}px`;
 		header.style.setProperty("--header-top", top);
-
 		if (disableTransitions) {
 			void header.offsetHeight;
 		}
 	}
-
-	// Ajusta el padding-top del body según la altura real del header y top-bar
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// ajusta el padding-top del body según la altura real del header y top-bar
 	function ajustarPaddingBody() {
 		const topBar = document.querySelector(".top-bar");
 		const header = document.querySelector("header");
@@ -53,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (header) header.style.transition = "";
 		if (topBar) topBar.style.transition = "";
 	}, 50);
-
+	// observa cambios en la top-bar para ajustar el header
 	if (topBar && header) {
 		const observer = new MutationObserver(() => adjustHeaderPosition());
 		observer.observe(topBar, {
@@ -63,7 +62,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		window.addEventListener("resize", () => adjustHeaderPosition());
 	}
-
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// oculta la top-bar y mueve el header al hacer scroll hacia abajo
 	if (topBar && header) {
 		let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -81,7 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 		});
 	}
-
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// resalta el enlace activo en la navegación
 	function highlightActiveLink() {
 		const currentPage = window.location.pathname.split("/").pop();
 		const allLinks = [...desktopLinks, ...mobileLinks];
@@ -93,10 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
-
 	highlightActiveLink();
-
-	// 🔧 Actualizado: configuración del menú móvil
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// configura el menú móvil (abrir/cerrar y eventos)
 	function setupMobileMenu() {
 		if (!hamburgerBtn || !mobileMenuPanel || !menuOverlay) return;
 
@@ -122,12 +122,12 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
-
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	// cierra el menú móvil
 	function closeMobileMenu() {
 		mobileMenuPanel.classList.remove("active");
 		menuOverlay.classList.remove("active");
 		body.classList.remove("no-scroll");
 	}
-
 	setupMobileMenu();
 });
