@@ -74,71 +74,36 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
-	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
+	// Swipe táctil para mobile
 	let startX = 0;
-	let startY = 0;
-	let currentX = 0;
-	let isDragging = false;
-	let startTranslateX = 0;
-	let isHorizontalScroll = false;
+	let endX = 0;
+	let isSwiping = false;
 
-	function handleTouchStart(e) {
+	track.addEventListener("touchstart", (e) => {
 		stopAutoSlide();
-		isDragging = true;
+		isSwiping = true;
 		startX = e.touches[0].clientX;
-		startY = e.touches[0].clientY;
-		currentX = startX;
-		const slideWidth = slides[0].clientWidth;
-		startTranslateX = -currentIndex * slideWidth;
-		track.style.transition = "none";
-		isHorizontalScroll = false;
-	}
+	});
 
-	function handleTouchMove(e) {
-		if (!isDragging) return;
+	track.addEventListener("touchmove", (e) => {
+		if (!isSwiping) return;
+		endX = e.touches[0].clientX;
+	});
 
-		const dx = e.touches[0].clientX - startX;
-		const dy = e.touches[0].clientY - startY;
-
-		if (!isHorizontalScroll) {
-			if (Math.abs(dx) > Math.abs(dy)) {
-				isHorizontalScroll = true;
-			} else {
-				isDragging = false;
-				return;
-			}
+	track.addEventListener("touchend", () => {
+		if (!isSwiping) return;
+		const diff = endX - startX;
+		const threshold = 50; // Mínima distancia para considerar swipe
+		if (diff > threshold) {
+			// Swipe a la derecha (slide anterior)
+			currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+			updateSlide(currentIndex);
+		} else if (diff < -threshold) {
+			// Swipe a la izquierda (slide siguiente)
+			currentIndex = (currentIndex + 1) % slideCount;
+			updateSlide(currentIndex);
 		}
-
-		currentX = e.touches[0].clientX;
-		const moveX = currentX - startX;
-		track.style.transform = `translateX(${startTranslateX + moveX}px)`;
-
-		e.preventDefault();
-	}
-
-	function handleTouchEnd() {
-		if (!isHorizontalScroll) return;
-		isDragging = false;
-		const deltaX = currentX - startX;
-		const swipeThreshold = 50;
-		const slideWidth = slides[0].clientWidth;
-
-		if (Math.abs(deltaX) > swipeThreshold) {
-			if (deltaX < 0) {
-				currentIndex = Math.min(currentIndex + 1, slideCount - 1);
-			} else {
-				currentIndex = Math.max(currentIndex - 1, 0);
-			}
-		}
-
-		track.style.transition = "transform 0.3s ease";
-		updateSlide(currentIndex);
+		isSwiping = false;
 		startAutoSlide();
-	}
-
-	track.addEventListener("touchstart", handleTouchStart, {passive: false});
-	track.addEventListener("touchmove", handleTouchMove, {passive: false});
-	track.addEventListener("touchend", handleTouchEnd, {passive: true});
-
-	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
+	});
 });
