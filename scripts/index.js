@@ -65,17 +65,37 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
+	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
 	let touchStartX = 0;
-	let touchEndX = 0;
+	let touchCurrentX = 0;
+	let isSwiping = false;
+
 	function handleTouchStart(e) {
 		touchStartX = e.touches[0].clientX;
+		touchCurrentX = touchStartX;
+		isSwiping = true;
+		// Detener transición para feedback visual inmediato
+		track.style.transition = "none";
 	}
+
 	function handleTouchMove(e) {
-		touchEndX = e.touches[0].clientX;
+		if (!isSwiping) return;
+		touchCurrentX = e.touches[0].clientX;
+		const slideWidth = slides[0].clientWidth;
+		const moveX = touchCurrentX - touchStartX;
+		// Mueve el track visualmente mientras se arrastra
+		track.style.transform = `translateX(-${currentIndex * slideWidth - moveX}px)`;
 	}
+
 	function handleTouchEnd() {
+		if (!isSwiping) return;
+		isSwiping = false;
 		const swipeThreshold = 50; // mínima distancia para considerar swipe
-		const diff = touchEndX - touchStartX;
+		const diff = touchCurrentX - touchStartX;
+		const slideWidth = slides[0].clientWidth;
+		// Restaurar transición
+		track.style.transition = "";
+
 		if (Math.abs(diff) > swipeThreshold) {
 			stopAutoSlide();
 			if (diff < 0) {
@@ -87,10 +107,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 			updateSlide(currentIndex);
 			startAutoSlide();
+		} else {
+			// Si no supera el umbral, vuelve al slide actual
+			track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 		}
 	}
+
 	track.addEventListener("touchstart", handleTouchStart, {passive: true});
-	track.addEventListener("touchmove", handleTouchMove, {passive: true});
+	track.addEventListener("touchmove", handleTouchMove, {passive: false});
 	track.addEventListener("touchend", handleTouchEnd, {passive: true});
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 });
