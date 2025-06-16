@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// inicia el auto-desplazamiento del carrusel
 	function startAutoSlide() {
-		if (interval) clearInterval(interval);
+		if (interval) return; // si ya está activo, no hagas nada
 		interval = setInterval(() => {
 			currentIndex = (currentIndex + 1) % slideCount;
 			updateSlide(currentIndex);
@@ -31,8 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// detiene el auto-desplazamiento del carrusel
 	function stopAutoSlide() {
-		clearInterval(interval);
-		interval = null;
+		if (interval) {
+			clearInterval(interval);
+			interval = null;
+		}
 	}
 
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
