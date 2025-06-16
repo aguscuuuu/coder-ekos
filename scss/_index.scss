@@ -25,12 +25,14 @@
 					height: auto;
 					object-fit: cover;
 					flex-shrink: 0;
+					pointer-events: none;
 				}
 			}
 		}
 	}
 	.image-track img {
 		max-height: 20rem;
+		pointer-events: none;
 	}
 	@include desktop {
 		display: flex;

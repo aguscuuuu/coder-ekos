@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// inicia el auto-desplazamiento del carrusel
 	function startAutoSlide() {
-		if (interval) return; // si ya está activo, no hagas nada
+		if (interval) return;
 		interval = setInterval(() => {
 			currentIndex = (currentIndex + 1) % slideCount;
 			updateSlide(currentIndex);
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		updateSlide(currentIndex);
 		startAutoSlide();
 	});
+
 	// evento para ir al siguiente slide
 	next.addEventListener("click", () => {
 		stopAutoSlide();
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		updateSlide(currentIndex);
 		startAutoSlide();
 	});
+
 	// evento para ir a un slide específico al hacer click en un dot
 	dots.forEach((dot) => {
 		dot.addEventListener("click", (e) => {
@@ -79,30 +81,44 @@ document.addEventListener("DOMContentLoaded", function () {
 	let endX = 0;
 	let isSwiping = false;
 
-	track.addEventListener("touchstart", (e) => {
-		stopAutoSlide();
-		isSwiping = true;
-		startX = e.touches[0].clientX;
-		endX = startX; // Reinicia endX en cada inicio de swipe
-	});
+	[track, ...slides].forEach((el) => {
+		el.addEventListener(
+			"touchstart",
+			(e) => {
+				stopAutoSlide();
+				isSwiping = true;
+				startX = e.touches[0].clientX;
+				endX = startX;
+			},
+			{passive: true}
+		);
 
-	track.addEventListener("touchmove", (e) => {
-		if (!isSwiping) return;
-		endX = e.touches[0].clientX;
-	});
+		el.addEventListener(
+			"touchmove",
+			(e) => {
+				if (!isSwiping) return;
+				endX = e.touches[0].clientX;
+			},
+			{passive: true}
+		);
 
-	track.addEventListener("touchend", () => {
-		if (!isSwiping) return;
-		const diff = endX - startX;
-		const threshold = 50; // Mínima distancia para considerar swipe
-		if (diff > threshold) {
-			currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-			updateSlide(currentIndex);
-		} else if (diff < -threshold) {
-			currentIndex = (currentIndex + 1) % slideCount;
-			updateSlide(currentIndex);
-		}
-		isSwiping = false;
-		startAutoSlide();
+		el.addEventListener(
+			"touchend",
+			() => {
+				if (!isSwiping) return;
+				const diff = endX - startX;
+				const threshold = 50;
+				if (diff > threshold) {
+					currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+					updateSlide(currentIndex);
+				} else if (diff < -threshold) {
+					currentIndex = (currentIndex + 1) % slideCount;
+					updateSlide(currentIndex);
+				}
+				isSwiping = false;
+				startAutoSlide();
+			},
+			{passive: true}
+		);
 	});
 });
