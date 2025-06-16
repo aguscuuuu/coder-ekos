@@ -67,25 +67,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
 	let touchStartX = 0;
 	let isDragging = false;
-	let animationFrameId = null;
 	let startTranslateX = 0;
 
 	function handleTouchStart(e) {
+		stopAutoSlide();
 		touchStartX = e.touches[0].clientX;
 		isDragging = true;
-		startTranslateX = -currentIndex * slides[0].clientWidth;
+		const slideWidth = slides[0].clientWidth;
+		startTranslateX = -currentIndex * slideWidth;
 		track.style.transition = "none";
-		cancelAnimationFrame(animationFrameId);
 	}
 
 	function handleTouchMove(e) {
 		if (!isDragging) return;
-
 		const touchX = e.touches[0].clientX;
-		const moveX = touchX - touchStartX;
-		const currentTranslateX = startTranslateX + moveX;
-
-		track.style.transform = `translateX(${currentTranslateX}px)`;
+		const deltaX = touchX - touchStartX;
+		const newTranslate = startTranslateX + deltaX;
+		track.style.transform = `translateX(${newTranslate}px)`;
 		e.preventDefault();
 	}
 
@@ -98,22 +96,19 @@ document.addEventListener("DOMContentLoaded", function () {
 		const slideWidth = slides[0].clientWidth;
 
 		if (Math.abs(movedX) > slideWidth / 4) {
-			stopAutoSlide();
 			if (movedX < 0 && currentIndex < slideCount - 1) {
 				currentIndex++;
 			} else if (movedX > 0 && currentIndex > 0) {
 				currentIndex--;
 			}
 		}
-		// Suavizar la animación
 		track.style.transition = "transform 0.3s ease";
 		updateSlide(currentIndex);
 		startAutoSlide();
 	}
 
-	// Eventos táctiles
-	track.addEventListener("touchstart", handleTouchStart, {passive: true});
+	track.addEventListener("touchstart", handleTouchStart, {passive: false});
 	track.addEventListener("touchmove", handleTouchMove, {passive: false});
-	track.addEventListener("touchend", handleTouchEnd, {passive: true});
+	track.addEventListener("touchend", handleTouchEnd, {passive: false});
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 });
