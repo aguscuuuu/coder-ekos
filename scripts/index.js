@@ -76,33 +76,51 @@ document.addEventListener("DOMContentLoaded", function () {
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// permite desplazar las imágenes del carrusel con los dedos en mobile (swipe)
 	let startX = 0;
+	let startY = 0;
 	let currentX = 0;
 	let isDragging = false;
 	let startTranslateX = 0;
-	const swipeThreshold = 50;
+	let isHorizontalScroll = false;
 
 	function handleTouchStart(e) {
 		stopAutoSlide();
 		isDragging = true;
 		startX = e.touches[0].clientX;
+		startY = e.touches[0].clientY;
 		currentX = startX;
 		const slideWidth = slides[0].clientWidth;
 		startTranslateX = -currentIndex * slideWidth;
 		track.style.transition = "none";
+		isHorizontalScroll = false;
 	}
 
 	function handleTouchMove(e) {
 		if (!isDragging) return;
+
+		const dx = e.touches[0].clientX - startX;
+		const dy = e.touches[0].clientY - startY;
+
+		if (!isHorizontalScroll) {
+			if (Math.abs(dx) > Math.abs(dy)) {
+				isHorizontalScroll = true;
+			} else {
+				isDragging = false;
+				return;
+			}
+		}
+
 		currentX = e.touches[0].clientX;
 		const moveX = currentX - startX;
 		track.style.transform = `translateX(${startTranslateX + moveX}px)`;
+
 		e.preventDefault();
 	}
 
 	function handleTouchEnd() {
-		if (!isDragging) return;
+		if (!isHorizontalScroll) return;
 		isDragging = false;
 		const deltaX = currentX - startX;
+		const swipeThreshold = 50;
 		const slideWidth = slides[0].clientWidth;
 
 		if (Math.abs(deltaX) > swipeThreshold) {
