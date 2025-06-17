@@ -13,20 +13,20 @@ STATUS
 In progress
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 VERSION
-0.8.0 June 2025                                   
+(    ) June 2025                                   
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 ACCESS
 Wireframe   | /pdf/wireframe.pdf                          
 Repository  | https://github.com/aguscuuuu/coder-ekos.git 
-Web site    |                                                     
+Website     |                                                     
 Download    |                                                     
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 USED TECHNOLOGIES
 Languages   | HTML | CSS | SCSS | JavaScript              
-Frameworks  | Bootstrap                                   
+Frameworks  | Bootstrap                                      
 Databases   |                                                    
 Tools       |                                                        
-Platforms   |                                                    
+Platforms   | AOS                                                   
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 DEVELOPERS & CONTRIBUTORS
 - Agustin Cuenca [AgustinCuenca] [aguabentura08@gmail.com] | Main Developer
