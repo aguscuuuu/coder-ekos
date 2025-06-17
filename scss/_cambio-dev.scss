@@ -19,6 +19,12 @@
 		font-size: 0.9rem;
 		text-align: left;
 	}
+	.list-group-item {
+		list-style-type: decimal;
+		padding: 0.5rem;
+		background-color: $cream3;
+		border: 2px solid $cream4;
+	}
 	@include desktop {
 		max-width: 1500px;
 		margin: 0 auto;

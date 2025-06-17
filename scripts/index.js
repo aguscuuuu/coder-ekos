@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	let currentIndex = 0;
 	const intervalTime = 3000;
 	let interval = null;
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// actualiza la posición del slide y el estado de los dots
 	function updateSlide(index) {
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		dots.forEach((dot) => dot.classList.remove("active"));
 		if (dots[index]) dots[index].classList.add("active");
 	}
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// inicia el auto-desplazamiento del carrusel
 	function startAutoSlide() {
@@ -27,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			updateSlide(currentIndex);
 		}, intervalTime);
 	}
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// detiene el auto-desplazamiento del carrusel
 	function stopAutoSlide() {
@@ -36,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			interval = null;
 		}
 	}
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// evento para ir al slide anterior
 	prev.addEventListener("click", () => {
@@ -45,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		updateSlide(currentIndex);
 		startAutoSlide();
 	});
-
 	// evento para ir al siguiente slide
 	next.addEventListener("click", () => {
 		stopAutoSlide();
@@ -53,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		updateSlide(currentIndex);
 		startAutoSlide();
 	});
-
 	// evento para ir a un slide específico al hacer click en un dot
 	dots.forEach((dot) => {
 		dot.addEventListener("click", (e) => {
@@ -63,24 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
 			startAutoSlide();
 		});
 	});
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// inicializar el carrusel
 	updateSlide(currentIndex);
 	startAutoSlide();
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// ajustar el tamaño del slide al redimensionar la ventana
 	window.addEventListener("resize", () => {
 		updateSlide(currentIndex);
 	});
-
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
-	// Swipe táctil para mobile
+	// swipe táctil para mobile
 	let startX = 0;
 	let endX = 0;
 	let isSwiping = false;
-
 	[track, ...slides].forEach((el) => {
 		el.addEventListener(
 			"touchstart",
@@ -92,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{passive: true}
 		);
-
 		el.addEventListener(
 			"touchmove",
 			(e) => {
@@ -101,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			},
 			{passive: true}
 		);
-
 		el.addEventListener(
 			"touchend",
 			() => {
@@ -121,4 +109,5 @@ document.addEventListener("DOMContentLoaded", function () {
 			{passive: true}
 		);
 	});
+	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 });

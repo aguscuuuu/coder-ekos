@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	const body = document.body;
 	const desktopLinks = document.querySelectorAll(".desktop-nav a");
 	const mobileLinks = document.querySelectorAll(".mobile-menu-panel a");
+	const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+	const tooltipList = [...tooltipTriggerList].map((tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl));
+
 	//■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 	// deshabilita las transiciones iniciales del header y la top-bar
 	function disableInitialTransitions() {
