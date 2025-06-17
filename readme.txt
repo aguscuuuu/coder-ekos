@@ -10,7 +10,8 @@ contact, offering a safe and personalized shopping experience for customers thro
 Argentina.
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 STATUS
-In progress
+- In progress
+- Not launched
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 VERSION
 (    ) June 2025                                   
@@ -25,8 +26,7 @@ USED TECHNOLOGIES
 Languages   | HTML | CSS | SCSS | JavaScript              
 Frameworks  | Bootstrap                                      
 Databases   |                                                    
-Tools       |                                                        
-Platforms   | AOS                                                   
+Tools       | AOS                                                                                                       
 ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 DEVELOPERS & CONTRIBUTORS
 - Agustin Cuenca [AgustinCuenca] [aguabentura08@gmail.com] | Main Developer
