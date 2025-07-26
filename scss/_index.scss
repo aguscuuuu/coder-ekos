@@ -133,83 +133,87 @@
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 // BENEFITS SECTION
 .beneficios {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-	padding: 1.5rem;
-	color: #362029;
-	text-align: center;
-	margin-top: auto;
-	section {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 0.5em;
-		flex-grow: 1;
-		margin: 0;
-		background-color: #fff9f4;
-		width: 100%;
-		border-radius: 15px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		img {
-			width: 3rem;
-			padding: 0.3rem;
-			filter: brightness(0) saturate(100%) invert(14%) sepia(28%) saturate(798%) hue-rotate(311deg) brightness(92%) contrast(88%);
-		}
-		h3 {
-			font-size: 0.9rem;
-		}
-		p {
-			font-size: 0.7rem;
-		}
-	}
-	.beneficio-1,
-	.beneficio-2,
-	.beneficio-3 {
-		position: relative;
-	}
-	@include desktop {
-		flex-direction: row;
-		justify-content: center;
-		align-items: flex-start;
-		gap: 6em;
-		padding: 30px 10px;
-		margin: 2rem;
-		section {
-			padding: 1em;
-			max-width: 450px;
-			border-radius: 20px;
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-			transition: background-color 0.3s ease;
-			img {
-				width: 70px;
-				margin-bottom: 8px;
-				transition: filter 0.3s ease;
-			}
-			h3 {
-				font-size: 1rem;
-				margin-bottom: 5px;
-				transition: transform 0.3s ease;
-			}
-			p {
-				font-size: 0.8rem;
-				transition: transform 0.3s ease;
-			}
-			&:hover {
-				background-color: #93556c;
-				color: white;
-				img {
-					filter: brightness(0) invert(1);
-				}
-				h3,
-				p {
-					transform: translateY(-5px);
-				}
-			}
-		}
-	}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    color: #362029;
+    text-align: center;
+    margin-top: auto;
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5em;
+        flex-grow: 1;
+        margin: 0;
+        background-color: #fff9f4;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        img {
+            width: 3rem;
+            padding: 0.3rem;
+            filter: brightness(0) saturate(100%) invert(14%) sepia(28%) saturate(798%) hue-rotate(311deg) brightness(92%) contrast(88%);
+        }
+        h2 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+			font-weight: bold;
+        }
+        h3 {
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: bold;
+        }
+    }
+    .beneficio-1,
+    .beneficio-2,
+    .beneficio-3 {
+        position: relative;
+    }
+    @include desktop {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 6em;
+        padding: 30px 10px;
+        margin: 2rem;
+        section {
+            padding: 1em;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            img {
+                width: 70px;
+                margin-bottom: 8px;
+                transition: filter 0.3s ease;
+            }
+            h2 {
+                font-size: 1.3rem;
+                margin-bottom: 8px;
+                transition: transform 0.3s ease;
+            }
+            h3 {
+                font-size: 1rem;
+                transition: transform 0.3s ease;
+            }
+            &:hover {
+                background-color: #93556c;
+                color: white;
+                img {
+                    filter: brightness(0) invert(1);
+                }
+                h2,
+                h3 {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
 }
 //■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■▶
 // PRESENTATIONS

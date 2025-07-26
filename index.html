@@ -1,217 +1,212 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<!-- general metadata -->
+		<!-- General Metadata -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Bienvenido a EKOS Accesorios. Tienda online de joyería fina. Encontrá collares, aros y pulseras de diseño con envíos a todo el país. 30% OFF transferencia - 6 cuotas sin interés. ¡Conoce más!" />
-		<meta
+		<meta 
 			name="keywords"
 			content="joyería, accesorio, accesorios, collar, collares, aro, aros, pulsera, pulseras, bijouterie, tienda online, joya, joyas, moda, diseño, regalo, regalos, Ekos, joyería fina, accesorios de moda, accesorio de moda, comprar joyas, envío a domicilio, cuotas sin interés, ofertas, Argentina, Buenos Aires, Monte Grande, Luis Guillon, Lomas de Zamora, Banfield, Llavallol" />
-		<meta name="author" content="cueCode- Software" />
+		<meta name="author" content="cueCode_ Software" />
 		<meta name="robots" content="index, follow" />
-		<!-- open graph for social media -->
+		<!-- Social media open graph -->
 		<meta property="og:title" content="EKOS Accesorios - Tienda Online de Accesorios" />
 		<meta property="og:description" content="Descubrí collares, aros y pulseras de diseño. Envíos a todo el país. 30% OFF transferencia - 6 cuotas sin interés." />
 		<meta property="og:image" content="https://github.com/aguscuuuu/coder-ekos/raw/main/multimedia/marca/logo.png" />
 		<meta property="og:url" content="https://github.com/aguscuuuu/coder-ekos" />
 		<meta property="og:type" content="website" />
-		<!-- twitter card -->
+		<!-- Twitter card -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content="EKOS Accesorios - Tienda Online de Accesorios" />
 		<meta name="twitter:description" content="Descubrí collares, aros y pulseras de diseño. Envíos a todo el país." />
 		<meta name="twitter:image" content="https://github.com/aguscuuuu/coder-ekos/raw/main/multimedia/marca/logo.png" />
-		<!-- bootstrap -->
+		<!-- Bootstrap CDN -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
-		<!-- aos -->
+		<!-- AOS CDN -->
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-		<!-- icon -->
+		<!-- Icon -->
 		<link rel="shortcut icon" href="./multimedia/marca/icono4.png" />
-		<!-- font: montserrat -->
+		<!-- Google Fonts link-->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Google Fonts: Montserrat -->
 		<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-		<!-- font: orbitro -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- Google Fonts: Orbitro-->
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet" />
-		<!-- css -->
+		<!-- CSS link -->
 		<link rel="stylesheet" href="./styles/style.css" />
-		<!-- title -->
+		<!-- Title -->
 		<title>EKOS Accesorios - Tienda Online</title>
 	</head>
 	<body>
-		<section class="page-container">
-			<!-- not visible -->
-			<h1 class="sr-only">Ekos Accesorios</h1>
-			<header>
-				<section class="top-bar">
-					<p>30% OFF transfiriendo - 6 cuotas sin interés con tarjeta de crédito</p>
-				</section>
-				<div class="header-container">
-					<section class="logo">
-						<a href="index.html"><img src="./multimedia/marca/logo.png" alt="logo" /></a>
-					</section>
-					<button class="hamburger-btn" aria-label="Menú de navegación">
-						<span class="hamburger-icon"></span>
-					</button>
-					<nav class="desktop-nav">
-						<ul>
-							<li><a href="index.html">Inicio</a></li>
-							<li><a href="./pages/productos.html">Productos</a></li>
-							<li><a href="./pages/contacto.html">Contacto</a></li>
-							<li><a href="./pages/ubicacion.html">Dónde encontrarnos</a></li>
-							<li><a href="./pages/cambio-dev.html">Política de cambio</a></li>
-						</ul>
-					</nav>
-					<div class="mobile-menu-panel">
-						<button class="close-menu" aria-label="Cerrar menú">✕</button>
-						<ul>
-							<li><a href="index.html">Inicio</a></li>
-							<li><a href="./pages/productos.html">Productos</a></li>
-							<li><a href="./pages/contacto.html">Contacto</a></li>
-							<li><a href="./pages/ubicacion.html">Dónde encontrarnos</a></li>
-							<li><a href="./pages/cambio-dev.html">Política de cambio</a></li>
-						</ul>
-					</div>
-					<div class="menu-overlay"></div>
-				</div>
-			</header>
-			<main class="content">
-				<section class="carousel-wrapper">
-					<button class="prev">&#10094;</button>
-					<section class="carousel">
-						<section class="carousel-images">
-							<div class="image-track">
-								<img src="./multimedia/collares/collar12.webp" alt="imagen 1" loading="lazy" />
-								<img src="./multimedia/aros/aros6.webp" alt="imagen 2" loading="lazy" />
-								<img src="./multimedia/pulseras/pulsera10.webp" alt="imagen 3" loading="lazy" />
-							</div>
-						</section>
-					</section>
-					<button class="next">&#10095;</button>
-				</section>
-				<section class="botones-de-fotos">
-					<button class="dot" data-index="0"></button>
-					<button class="dot" data-index="1"></button>
-					<button class="dot" data-index="2"></button>
-				</section>
-				<section class="beneficios">
-					<section class="beneficio-1" data-aos="zoom-in">
-						<img src="./multimedia/logos/etiqueta.png" alt="etiqueta" loading="lazy" />
-						<h3>Regalá Ekos Accesorios</h3>
-						<p>Envíos a todo el país</p>
-					</section>
-					<section class="beneficio-2" data-aos="zoom-in">
-						<img src="./multimedia/logos/tarjeta-de-credito.png" alt="tarjeta-de-credito" loading="lazy" />
-						<h3>Pagá como quieras</h3>
-						<p>Hasta 6 cuotas sin interés</p>
-					</section>
-					<section class="beneficio-3" data-aos="zoom-in">
-						<img src="./multimedia/logos/candado.png" alt="candado" loading="lazy" />
-						<h3>Comprá con seguridad</h3>
-						<p>Tus datos siempre protegidos</p>
-					</section>
-				</section>
-				<section class="presentaciones-tipo-de-producto">
-					<section class="tipo-de-producto" data-aos="zoom-in">
-						<section class="producto-contenedor">
-							<a href="./pages/productos.html">
-								<img src="./multimedia/collares/collar4.webp" alt="collares" loading="lazy" />
-								<p>Collares</p>
-							</a>
-						</section>
-					</section>
-					<section class="tipo-de-producto" data-aos="zoom-in">
-						<section class="producto-contenedor">
-							<a href="./pages/productos.html">
-								<img src="./multimedia/aros/aros3.webp" alt="aros" loading="lazy" />
-								<p>Aros</p>
-							</a>
-						</section>
-					</section>
-					<section class="tipo-de-producto" data-aos="zoom-in">
-						<section class="producto-contenedor">
-							<a href="./pages/productos.html">
-								<img src="./multimedia/pulseras/pulsera2.webp" alt="pulseras" loading="lazy" />
-								<p>Pulseras</p>
-							</a>
-						</section>
-					</section>
-				</section>
-				<div class="instagram-section">
-					<a href="https://www.instagram.com/ekos.accs" target="_blank" class="instagram-link">
-						<img src="./multimedia/redes sociales/instagram.png" alt="Instagram" class="instagram-icon" />
-						<div class="instagram-text">
-							<span class="follow-us">Seguinos en Instagram</span>
-							<span class="account-name">ekos.accs</span>
-						</div>
-					</a>
-				</div>
-				<div class="newsletter">
-					<label for="email">¡Recibí las mejores ofertas!</label>
-					<input type="email" id="email" placeholder="Ingresá tu e-mail" />
-					<button type="submit">Registrate</button>
-				</div>
-				<!-- whatsapp button -->
-				<a href="https://wa.me/+5491155749034?text=¡Hola!%20me%20interesa%20un%20producto%20de%20EKOS" class="whatsapp-float" target="_blank" title="Contactanos por WhatsApp"><img src="./multimedia/redes sociales/whatsapp-verde.png" alt="WhatsApp" /></a>
-			</main>
-			<footer>
-				<section class="shallow-footer">
-					<!-- columna de navegación -->
-					<section class="footer-column">
-						<h3>Navegación</h3>
-						<ul>
-							<li><a href="./index.html">Inicio</a></li>
-							<li><a href="./pages/productos.html">Productos</a></li>
-							<li><a href="./pages/contacto.html">Contacto</a></li>
-							<li><a href="./pages/ubicacion.html">Donde encontrarnos</a></li>
-							<li><a href="./pages/cambio-dev.html">Política de cambio o devolución</a></li>
-						</ul>
-					</section>
-					<!-- columna de métodos de pago y formas de envío -->
-					<section class="footer-column">
-						<h3>Métodos de pago</h3>
-						<img src="./multimedia/metodos de pago/visa.png" alt="visa" title="Visa" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/american-express.png" alt="american express" title="American Express" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/cabal-png.png" alt="cabal" title="Cabal" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/cencosud.png" alt="cencosud" title="Cencosud" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" />
-						<img src="./multimedia/metodos de pago/diners-club.png" alt="diners club" title="Diners Club" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/maestro.png" alt="maestro" title="Maestro" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/mastercard.png" alt="mastercard" title="Mastercard" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/naranja.png" alt="naranja" title="Naranja" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<img src="./multimedia/metodos de pago/tarjeta-shopping.png" alt="tarjeta shopping" title="Tarjeta Shopping" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-						<h3>Formas de envío</h3>
-						<img src="./multimedia/formas de envio/correo-argentino.png" alt="correo argentino" title="Correo Argentino" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
-					</section>
-					<!-- columna de contacto -->
-					<section class="footer-column">
-						<h3>Contacto</h3>
-						<ul>
-							<li><a href="https://wa.me/+5491155749034?text=¡Hola!%20me%20interesa%20un%20producto%20de%20EKOS" target="_blank">Envianos un WhatsApp</a></li>
-							<li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ekos.baires@gmail.com" target="_blank">Envianos un mail</a></li>
-							<li><a href="./pages/ubicacion.html">Nuestros locales</a></li>
-						</ul>
-					</section>
-					<!-- columna de redes sociales -->
-					<section class="footer-column">
-						<h3>Redes sociales</h3>
-						<ul>
-							<li><a href="">Facebook</a></li>
-							<li><a href="https://www.instagram.com/ekos.accs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a></li>
-						</ul>
-					</section>
-				</section>
-				<section class="deep-footer">
-					<p><b>&copy; 2025 Ekos. Todos los derechos reservados.</b></p>
-					<p>Defensa de las y los consumidores. Para reclamos <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">ingresá acá</a>.</p>
-					<p>Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a la verificación de stock. Precios sujetos a cambios sin previo aviso.</p>
-				</section>
-				<section class="creator">
-					<p>cueCode_ Software</p>
-				</section>
-			</footer>
-		</section>
+    <section class="page-container">
+        <!-- h1 not visible -->
+        <h1 class="sr-only">Ekos Accesorios</h1>
+        <header>
+            <section class="top-bar" aria-label="Promoción principal">
+                <p>30% OFF transfiriendo - 6 cuotas sin interés con tarjeta de crédito</p>
+            </section>
+            <div class="header-container">
+                <section class="logo" aria-label="Logo de Ekos Accesorios">
+                    <a href="index.html"><img src="./multimedia/marca/logo.png" alt="logo" /></a>
+                </section>
+                <button class="hamburger-btn" aria-label="Abrir menú de navegación">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <nav class="desktop-nav" aria-label="Navegación principal">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="./pages/productos.html">Productos</a></li>
+                        <li><a href="./pages/contacto.html">Contacto</a></li>
+                        <li><a href="./pages/ubicacion.html">Dónde encontrarnos</a></li>
+                        <li><a href="./pages/cambio-dev.html">Política de cambio</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-panel" aria-label="Menú móvil">
+                    <button class="close-menu" aria-label="Cerrar menú">✕</button>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="./pages/productos.html">Productos</a></li>
+                        <li><a href="./pages/contacto.html">Contacto</a></li>
+                        <li><a href="./pages/ubicacion.html">Dónde encontrarnos</a></li>
+                        <li><a href="./pages/cambio-dev.html">Política de cambio</a></li>
+                    </ul>
+                </div>
+                <div class="menu-overlay" aria-label="Fondo del menú móvil"></div>
+            </div>
+        </header>
+        <main class="content">
+            <section class="carousel-wrapper" aria-label="Carrusel de imágenes principales">
+                <button class="prev" aria-label="Imagen anterior">&#10094;</button>
+                <section class="carousel">
+                    <section class="carousel-images">
+                        <div class="image-track">
+                            <img src="./multimedia/collares/collar12.webp" alt="imagen 1" loading="lazy" />
+                            <img src="./multimedia/aros/aros6.webp" alt="imagen 2" loading="lazy" />
+                            <img src="./multimedia/pulseras/pulsera10.webp" alt="imagen 3" loading="lazy" />
+                        </div>
+                    </section>
+                </section>
+                <button class="next" aria-label="Imagen siguiente">&#10095;</button>
+            </section>
+            <section class="botones-de-fotos" aria-label="Selector de imágenes del carrusel">
+                <button class="dot" data-index="0" aria-label="Seleccionar imagen 1"></button>
+                <button class="dot" data-index="1" aria-label="Seleccionar imagen 2"></button>
+                <button class="dot" data-index="2" aria-label="Seleccionar imagen 3"></button>
+            </section>
+            <section class="beneficios" aria-label="Beneficios de comprar en Ekos Accesorios">
+                <section class="beneficio-1" data-aos="zoom-in" aria-label="Regalá Ekos Accesorios">
+                    <img src="./multimedia/logos/etiqueta.png" alt="etiqueta" loading="lazy" />
+                    <h2>Regalá Ekos Accesorios</h2>
+                    <h3>Envíos a todo el país</h3>
+                </section>
+                <section class="beneficio-2" data-aos="zoom-in" aria-label="Pagá como quieras">
+                    <img src="./multimedia/logos/tarjeta-de-credito.png" alt="tarjeta-de-credito" loading="lazy" />
+                    <h2>Pagá como quieras</h2>
+                    <h3>Hasta 6 cuotas sin interés</h3>
+                </section>
+                <section class="beneficio-3" data-aos="zoom-in" aria-label="Comprá con seguridad">
+                    <img src="./multimedia/logos/candado.png" alt="candado" loading="lazy" />
+                    <h2>Comprá con seguridad</h2>
+                    <h3>Tus datos siempre protegidos</h3>
+                </section>
+            </section>
+            <section class="presentaciones-tipo-de-producto" aria-label="Tipos de productos">
+                <section class="tipo-de-producto" data-aos="zoom-in" aria-label="Collares">
+                    <section class="producto-contenedor">
+                        <a href="./pages/productos.html">
+                            <img src="./multimedia/collares/collar4.webp" alt="collares" loading="lazy" />
+                            <p>Collares</p>
+                        </a>
+                    </section>
+                </section>
+                <section class="tipo-de-producto" data-aos="zoom-in" aria-label="Aros">
+                    <section class="producto-contenedor">
+                        <a href="./pages/productos.html">
+                            <img src="./multimedia/aros/aros3.webp" alt="aros" loading="lazy" />
+                            <p>Aros</p>
+                        </a>
+                    </section>
+                </section>
+                <section class="tipo-de-producto" data-aos="zoom-in" aria-label="Pulseras">
+                    <section class="producto-contenedor">
+                        <a href="./pages/productos.html">
+                            <img src="./multimedia/pulseras/pulsera2.webp" alt="pulseras" loading="lazy" />
+                            <p>Pulseras</p>
+                        </a>
+                    </section>
+                </section>
+            </section>
+            <div class="instagram-section" aria-label="Instagram de Ekos Accesorios">
+                <a href="https://www.instagram.com/ekos.accs" target="_blank" class="instagram-link" aria-label="Ir a Instagram de Ekos Accesorios">
+                    <img src="./multimedia/redes sociales/instagram.png" alt="Instagram" class="instagram-icon" />
+                    <div class="instagram-text">
+                        <span class="follow-us">Seguinos en Instagram</span>
+                        <span class="account-name">ekos.accs</span>
+                    </div>
+                </a>
+            </div>
+            <div class="newsletter" aria-label="Suscripción al newsletter">
+                <label for="email">¡Recibí las mejores ofertas!</label>
+                <input type="email" id="email" placeholder="Ingresá tu e-mail" aria-label="Ingresá tu e-mail" />
+                <button type="submit" aria-label="Registrate al newsletter">Registrate</button>
+            </div>
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/+5491155749034?text=¡Hola!%20me%20interesa%20un%20producto%20de%20EKOS" class="whatsapp-float" target="_blank" title="Contactanos por WhatsApp" aria-label="Contactanos por WhatsApp"><img src="./multimedia/redes sociales/whatsapp-verde.png" alt="WhatsApp" /></a>
+        </main>
+        <footer aria-label="Pie de página">
+            <section class="shallow-footer" aria-label="Información de pie de página">
+                <section class="footer-column" aria-label="Navegación secundaria">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./pages/productos.html">Productos</a></li>
+                        <li><a href="./pages/contacto.html">Contacto</a></li>
+                        <li><a href="./pages/ubicacion.html">Donde encontrarnos</a></li>
+                        <li><a href="./pages/cambio-dev.html">Política de cambio o devolución</a></li>
+                    </ul>
+                </section>
+                <section class="footer-column" aria-label="Métodos de pago y formas de envío">
+                    <h3>Métodos de pago</h3>
+                    <img src="./multimedia/metodos de pago/visa.png" alt="visa" title="Visa" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/american-express.png" alt="american express" title="American Express" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/cabal-png.png" alt="cabal" title="Cabal" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/cencosud.png" alt="cencosud" title="Cencosud" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" />
+                    <img src="./multimedia/metodos de pago/diners-club.png" alt="diners club" title="Diners Club" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/maestro.png" alt="maestro" title="Maestro" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/mastercard.png" alt="mastercard" title="Mastercard" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/naranja.png" alt="naranja" title="Naranja" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <img src="./multimedia/metodos de pago/tarjeta-shopping.png" alt="tarjeta shopping" title="Tarjeta Shopping" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                    <h3>Formas de envío</h3>
+                    <img src="./multimedia/formas de envio/correo-argentino.png" alt="correo argentino" title="Correo Argentino" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" loading="lazy" />
+                </section>
+                <section class="footer-column" aria-label="Información de contacto">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="https://wa.me/+5491155749034?text=¡Hola!%20me%20interesa%20un%20producto%20de%20EKOS" target="_blank" aria-label="Envianos un WhatsApp">Envianos un WhatsApp</a></li>
+                        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ekos.baires@gmail.com" target="_blank" aria-label="Envianos un mail">Envianos un mail</a></li>
+                        <li><a href="./pages/ubicacion.html" aria-label="Nuestros locales">Nuestros locales</a></li>
+                    </ul>
+                </section>
+                <section class="footer-column" aria-label="Redes sociales">
+                    <h3>Redes sociales</h3>
+                    <ul>
+                        <li><a href="" aria-label="Facebook">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/ekos.accs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">Instagram</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section class="deep-footer" aria-label="Aviso legal">
+                <p><b>&copy; 2025 Ekos. Todos los derechos reservados.</b></p>
+                <p>Defensa de las y los consumidores. Para reclamos <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank" aria-label="Defensa de las y los consumidores">ingresá acá</a>.</p>
+                <p>Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a la verificación de stock. Precios sujetos a cambios sin previo aviso.</p>
+            </section>
+            <section class="creator" aria-label="Desarrollador del sitio">
+                <p>cueCode_ Software</p>
+            </section>
+        </footer>
+    </section>
 		<script src="./scripts/main.js"></script>
 		<script src="./scripts/index.js"></script>
 		<script src="./scripts/prueba.js"></script>

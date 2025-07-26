@@ -268,11 +268,15 @@ body h3 {
   padding: 0.3rem;
   filter: brightness(0) saturate(100%) invert(14%) sepia(28%) saturate(798%) hue-rotate(311deg) brightness(92%) contrast(88%);
 }
+.beneficios section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
 .beneficios section h3 {
   font-size: 0.9rem;
-}
-.beneficios section p {
-  font-size: 0.7rem;
+  margin: 0;
+  font-weight: bold;
 }
 .beneficios .beneficio-1,
 .beneficios .beneficio-2,
@@ -300,13 +304,13 @@ body h3 {
     margin-bottom: 8px;
     transition: filter 0.3s ease;
   }
-  .beneficios section h3 {
-    font-size: 1rem;
-    margin-bottom: 5px;
+  .beneficios section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
     transition: transform 0.3s ease;
   }
-  .beneficios section p {
-    font-size: 0.8rem;
+  .beneficios section h3 {
+    font-size: 1rem;
     transition: transform 0.3s ease;
   }
   .beneficios section:hover {
@@ -316,8 +320,8 @@ body h3 {
   .beneficios section:hover img {
     filter: brightness(0) invert(1);
   }
-  .beneficios section:hover h3,
-  .beneficios section:hover p {
+  .beneficios section:hover h2,
+  .beneficios section:hover h3 {
     transform: translateY(-5px);
   }
 }
@@ -662,27 +666,6 @@ body h3 {
 .contacto-container .contacto-formulario p {
   text-align: center;
   font-size: 0.8rem;
-}
-@media (min-width: 768px) {
-  .contacto-container {
-    gap: 3rem;
-    margin: 3rem 2rem;
-  }
-  .contacto-container .contacto-info,
-  .contacto-container .contacto-formulario {
-    min-width: 280px;
-    padding: 1.5rem;
-    min-height: 35em;
-  }
-  .contacto-container .contacto-info h4,
-  .contacto-container .contacto-formulario h4 {
-    font-size: 1.2rem;
-    margin-bottom: 1.2rem;
-  }
-  .contacto-container .contacto-info p,
-  .contacto-container .contacto-formulario p {
-    font-size: 0.9rem;
-  }
 }
 @media (min-width: 1024px) {
   .contacto-container {
