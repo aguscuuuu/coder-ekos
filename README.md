@@ -1,60 +1,43 @@
 # Ekos Accesorios
 
----
-
-### Description 
+## Description 
 
 **Ekos** is an online store for fine jewelry and fashion accessories, where users can discover and purchase exclusive design necklaces, earrings, and bracelets.  
 The site provides information about products, payment methods, shipping options, exchange policies, and contact, offering a safe and personalized shopping experience for customers throughout Argentina.
 
----
-
-### Project Status
+## Project Status
 
 - **Status:** In progress  
 - **Server:** Not launched
 
----
-
-### Version & Date
+## Version & Date
 
 - **Version:** *(not specified)*  
 - **Date:** July 2025
 
----
-
-### Language
+## Language
 
 - **Code:** ENG  
 - **Project:** ESP
 
----
-
-### Access
+## Access
 
 - **Model:** ./pdf/wireframe.pdf  
 - **Repository:** [https://github.com/aguscuuuu/coder-ekos.git](https://github.com/aguscuuuu/coder-ekos.git)  
 - **Website:** 
 
----
-
-### Used Technologies
+## Used Technologies
 
 - **Languages:** HTML, CSS, SCSS, JavaScript  
 - **Frameworks:** Bootstrap  
 - **Databases:** 
 - **Tools:** AOS
 
----
-
-### Developers & Contributors
+## Developers & Contributors
 
 - **Agustin Cuenca** (`AgustinCuenca` `aguabentura08@gmail.com`) — *Main Developer*
 
-
----
-
-### License
+## License
 
 This work has been dedicated to the public domain under the **Creative Commons CC0 1.0 Universal Public Domain Dedication**.
 
