@@ -7,8 +7,8 @@ The site provides information about products, payment methods, shipping options,
 
 ## Project Status
 
-- **Status:** In progress  
-- **Server:** Not launched
+- **Status:** Launched, in progress  
+- **Server:** [https://coder-ekos-cq6im52tk-aguscuuuus-projects.vercel.app](https://coder-ekos-cq6im52tk-aguscuuuus-projects.vercel.app)
 
 ## Version & Date
 
@@ -25,7 +25,6 @@ The site provides information about products, payment methods, shipping options,
 - **Model:** ./pdf/wireframe.pdf  
 - **Repository:** [https://github.com/aguscuuuu/coder-ekos.git](https://github.com/aguscuuuu/coder-ekos.git)  
 - **Deployment:** [https://aguscuuuu.github.io/coder-ekos/](https://aguscuuuu.github.io/coder-ekos/)  
-- **Website:** [https://coder-ekos-cq6im52tk-aguscuuuus-projects.vercel.app](https://coder-ekos-cq6im52tk-aguscuuuus-projects.vercel.app)
 
 ## Used Technologies
 
