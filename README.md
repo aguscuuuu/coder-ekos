@@ -58,6 +58,3 @@ To the extent possible under law, the author has waived all copyright and relate
                       \__ \/ __ \/ /_/ __/ | /| / / __ `/ ___/ _ \     
                      ___/ / /_/ / __/ /_ | |/ |/ / /_/ / /  /  __/     
                     /____/\____/_/  \__/ |__/|__/\__,_/_/   \___/  
-
----
-
